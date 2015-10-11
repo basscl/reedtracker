@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="12F2542" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Device" syncable="YES">
+        <attribute name="reedBrand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reedProperty" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reedSize" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Device" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

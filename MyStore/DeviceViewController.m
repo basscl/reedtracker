@@ -11,7 +11,7 @@
 
 @interface DeviceViewController ()
 
-@property (strong) NSMutableArray *devices;
+@property (strong) NSMutableArray *reeds;
 
 @end
 
@@ -57,8 +57,8 @@
     
     // Fetch the devices from persistent data store
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Device"];
-    self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Reed"];
+    self.reeds = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     [self.tableView reloadData];
 }
@@ -80,7 +80,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.devices.count;
+    return self.reeds.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,9 +89,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    NSManagedObject *device = [self.devices objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [device valueForKey:@"reedBrand"], [device valueForKey:@"reedSize"]]];
-    [cell.detailTextLabel setText:[device valueForKey:@"reedProperty"]];
+    NSManagedObject *reed = [self.reeds objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [reed valueForKey:@"reedBrand"], [reed valueForKey:@"reedSize"]]];
+    [cell.detailTextLabel setText:[reed valueForKey:@"reedProperty"]];
     
     
     return cell;
@@ -112,7 +112,7 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
-        [context deleteObject:[self.devices objectAtIndex:indexPath.row]];
+        [context deleteObject:[self.reeds objectAtIndex:indexPath.row]];
         
         NSError *error = nil;
         if (![context save:&error]) {
@@ -121,7 +121,7 @@
         }
         
         // Remove device from table view
-        [self.devices removeObjectAtIndex:indexPath.row];
+        [self.reeds removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
@@ -129,7 +129,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"UpdateDevice"]) {
-        NSManagedObject *selectedDevice = [self.devices objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        NSManagedObject *selectedDevice = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         DeviceDetailViewController *destViewController = segue.destinationViewController;
         destViewController.device = selectedDevice;
     }

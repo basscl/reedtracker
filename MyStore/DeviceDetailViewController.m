@@ -63,7 +63,7 @@
         
     } else {
         // Create a new device
-        NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"Device" inManagedObjectContext:context];
+        NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"Reed" inManagedObjectContext:context];
         [newDevice setValue:self.reedBrandTextField.text forKey:@"reedBrand"];
         [newDevice setValue:self.reedSizeTextField.text forKey:@"reedSize"];
         [newDevice setValue:self.reedPropertyTextField.text forKey:@"reedProperty"];

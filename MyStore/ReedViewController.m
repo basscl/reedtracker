@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Eileen Mack. All rights reserved.
 //
 
-#import "DeviceViewController.h"
+#import "ReedViewController.h"
 #import "DeviceDetailViewController.h"
 
-@interface DeviceViewController ()
+@interface ReedViewController ()
 
 @property (strong) NSMutableArray *reeds;
 
 @end
 
-@implementation DeviceViewController
+@implementation ReedViewController
 
 - (NSManagedObjectContext *)managedObjectContext
 {
@@ -129,9 +129,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"UpdateDevice"]) {
-        NSManagedObject *selectedDevice = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        NSManagedObject *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         DeviceDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.device = selectedDevice;
+        destViewController.reed = selectedReed;
     }
 }
 

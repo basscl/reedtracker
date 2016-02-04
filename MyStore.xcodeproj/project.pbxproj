@@ -23,7 +23,7 @@
 		315094161B9E3DF100415E29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 315094141B9E3DF100415E29 /* InfoPlist.strings */; };
 		315094181B9E3DF100415E29 /* MyStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 315094171B9E3DF100415E29 /* MyStoreTests.m */; };
 		315094221B9E3FD700415E29 /* MyStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315094211B9E3FD700415E29 /* MyStore.storyboard */; };
-		315094251B9E44D800415E29 /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 315094241B9E44D800415E29 /* DeviceViewController.m */; };
+		315094251B9E44D800415E29 /* ReedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 315094241B9E44D800415E29 /* ReedViewController.m */; };
 		3150942B1B9E45DB00415E29 /* DeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3150942A1B9E45DB00415E29 /* DeviceDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +57,8 @@
 		315094151B9E3DF100415E29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		315094171B9E3DF100415E29 /* MyStoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyStoreTests.m; sourceTree = "<group>"; };
 		315094211B9E3FD700415E29 /* MyStore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyStore.storyboard; sourceTree = "<group>"; };
-		315094231B9E44D800415E29 /* DeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceViewController.h; sourceTree = "<group>"; };
-		315094241B9E44D800415E29 /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceViewController.m; sourceTree = "<group>"; };
+		315094231B9E44D800415E29 /* ReedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReedViewController.h; sourceTree = "<group>"; };
+		315094241B9E44D800415E29 /* ReedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedViewController.m; sourceTree = "<group>"; };
 		315094291B9E45DB00415E29 /* DeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetailViewController.h; sourceTree = "<group>"; };
 		3150942A1B9E45DB00415E29 /* DeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,8 +129,8 @@
 				315094031B9E3DF100415E29 /* Images.xcassets */,
 				315094001B9E3DF100415E29 /* MyStore.xcdatamodeld */,
 				315093F51B9E3DF100415E29 /* Supporting Files */,
-				315094231B9E44D800415E29 /* DeviceViewController.h */,
-				315094241B9E44D800415E29 /* DeviceViewController.m */,
+				315094231B9E44D800415E29 /* ReedViewController.h */,
+				315094241B9E44D800415E29 /* ReedViewController.m */,
 				315094291B9E45DB00415E29 /* DeviceDetailViewController.h */,
 				3150942A1B9E45DB00415E29 /* DeviceDetailViewController.m */,
 			);
@@ -263,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				315094251B9E44D800415E29 /* DeviceViewController.m in Sources */,
+				315094251B9E44D800415E29 /* ReedViewController.m in Sources */,
 				315093FF1B9E3DF100415E29 /* EMAppDelegate.m in Sources */,
 				3150942B1B9E45DB00415E29 /* DeviceDetailViewController.m in Sources */,
 				315094021B9E3DF100415E29 /* MyStore.xcdatamodeld in Sources */,
@@ -468,6 +468,7 @@
 				3150941D1B9E3DF200415E29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3150941E1B9E3DF200415E29 /* Build configuration list for PBXNativeTarget "MyStoreTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +477,7 @@
 				315094201B9E3DF200415E29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

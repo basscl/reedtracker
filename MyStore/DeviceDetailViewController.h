@@ -10,7 +10,7 @@
 
 @interface DeviceDetailViewController : UIViewController
 
-@property (strong) NSManagedObject *device;
+@property (strong) NSManagedObject *reed;
 @property (weak, nonatomic) IBOutlet UITextField *reedBrandTextField;
 @property (weak, nonatomic) IBOutlet UITextField *reedSizeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *reedPropertyTextField;

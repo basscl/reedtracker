@@ -10,6 +10,6 @@
 
 
 
-@interface DeviceViewController : UITableViewController
+@interface ReedViewController : UITableViewController
 
 @end

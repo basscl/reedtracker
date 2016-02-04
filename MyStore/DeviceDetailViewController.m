@@ -14,7 +14,7 @@
 
 @implementation DeviceDetailViewController
 
-@synthesize device;
+@synthesize reed;
 
 - (NSManagedObjectContext *)managedObjectContext {
     NSManagedObjectContext *context = nil;
@@ -38,10 +38,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (self.device) {
-        [self.reedBrandTextField setText:[self.device valueForKey:@"reedBrand"]];
-        [self.reedSizeTextField setText:[self.device valueForKey:@"reedSize"]];
-        [self.reedPropertyTextField setText:[self.device valueForKey:@"reedProperty"]];
+    if (self.reed) {
+        [self.reedBrandTextField setText:[self.reed valueForKey:@"reedBrand"]];
+        [self.reedSizeTextField setText:[self.reed valueForKey:@"reedSize"]];
+        [self.reedPropertyTextField setText:[self.reed valueForKey:@"reedProperty"]];
     }
     
 }
@@ -55,11 +55,11 @@
 - (IBAction)save:(id)sender {
     NSManagedObjectContext *context = [self managedObjectContext];
     
-    if (self.device) {
+    if (self.reed) {
         // Update existing device
-        [self.device setValue:self.reedBrandTextField.text forKey:@"reedBrand"];
-        [self.device setValue:self.reedSizeTextField.text forKey:@"reedSize"];
-        [self.device setValue:self.reedPropertyTextField.text forKey:@"reedProperty"];
+        [self.reed setValue:self.reedBrandTextField.text forKey:@"reedBrand"];
+        [self.reed setValue:self.reedSizeTextField.text forKey:@"reedSize"];
+        [self.reed setValue:self.reedPropertyTextField.text forKey:@"reedProperty"];
         
     } else {
         // Create a new device

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DeviceDetailViewController : UIViewController
+@interface ReedDetailViewController : UIViewController
 
 @property (strong) NSManagedObject *reed;
 @property (weak, nonatomic) IBOutlet UITextField *reedBrandTextField;

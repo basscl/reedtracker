@@ -1,21 +1,25 @@
 //
-//  DeviceViewController.m
+//  ReedPropertyViewController.m
 //  MyStore
 //
-//  Created by Eileen Mack on 9/7/15.
-//  Copyright (c) 2015 Eileen Mack. All rights reserved.
+//  Created by Eileen Mack on 2/4/16.
+//  Copyright (c) 2016 Eileen Mack. All rights reserved.
 //
 
-#import "ReedViewController.h"
-#import "ReedDetailViewController.h"
+#import "ReedPropertyViewController.h"
 
-@interface ReedViewController ()
+@interface ReedPropertyViewController ()
 
-@property (strong) NSMutableArray *reeds;
+@property (strong) NSMutableArray *matchingBundles;
+@property (strong) NSMutableArray *allBundles;
+@property (strong, nonatomic) NSSet *bundleSet;
 
 @end
 
-@implementation ReedViewController
+@implementation ReedPropertyViewController
+
+
+
 
 - (NSManagedObjectContext *)managedObjectContext
 {
@@ -43,10 +47,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"RPVC viewDidLoad");
 
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -57,10 +64,17 @@
     
     // Fetch the devices from persistent data store
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Reed"];
-    self.reeds = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"ReedPropertyBundle"];
+    self.matchingBundles = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
-    [self.tableView reloadData];
+    //if (self.reed) {
+    //    NSLog(@"self.reed");
+    //self.bundleSet = [self.reed valueForKey:@"reedProps"];
+    //self.matchingBundles = [[NSMutableArray alloc] initWithObjects:[self.bundleSet allObjects], //nil];
+
+
+        [self.tableView reloadData];
+//}
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,7 +94,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.reeds.count;
+    return [self.matchingBundles count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,11 +103,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    NSManagedObject *reed = [self.reeds objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [reed valueForKey:@"reedBrand"], [reed valueForKey:@"reedSize"]]];
-    [cell.detailTextLabel setText:[reed valueForKey:@"reedProperty"]];
-    
-    
+    NSManagedObject *bundle = [self.matchingBundles objectAtIndex:indexPath.row];
+
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [bundle valueForKey:@"date"]]];
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@", [bundle valueForKey:@"judgment"]]];
+    NSLog(@"PROPS LOADED!!! %@", self.matchingBundles[0]);
+    NSLog(@"PROP LOADED!!! %@", bundle);
+    NSLog(@"DATE LOADED!!! %@", [bundle valueForKey:@"date"]);
+
     return cell;
 }
 
@@ -105,7 +122,7 @@
     return YES;
 }
 
-
+/*
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObjectContext *context = [self managedObjectContext];
@@ -129,56 +146,53 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"UpdateReed"]) {
-     
         NSManagedObject *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        NSLog(@"selectedReed");
-        NSLog(@"reed %@", selectedReed);
         ReedDetailViewController *destViewController = segue.destinationViewController;
         destViewController.reed = selectedReed;
     }
 }
 
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
 */
+/*
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
+ #pragma mark - Navigation
+ 
+ // In a story board-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ 
  */
 
 @end

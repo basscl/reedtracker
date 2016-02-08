@@ -16,6 +16,35 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    // Create Person
+    NSEntityDescription *entityReed = [NSEntityDescription entityForName:@"Reed" inManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *newReed = [[NSManagedObject alloc] initWithEntity:entityReed insertIntoManagedObjectContext:self.managedObjectContext];
+    
+    // Set First and Lats Name
+    [newReed setValue:@"Vandoren" forKey:@"reedBrand"];
+    [newReed setValue:@"4.5" forKey:@"reedSize"];
+    [newReed setValue:@"hard" forKey:@"reedProperty"];
+    
+    // Create Address
+    NSEntityDescription *entityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *newProp = [[NSManagedObject alloc] initWithEntity:entityProp insertIntoManagedObjectContext:self.managedObjectContext];
+    
+    // Set First and Last Name
+    [newProp setValue:@"today" forKey:@"date"];
+    [newProp setValue:@"wack" forKey:@"judgment"];
+    
+    // Add Address to Person
+    [newReed setValue:[NSSet setWithObject:newProp] forKey:@"ReedProps"];
+    
+    /*
+    // Save Managed Object Context
+    NSError *error = nil;
+    if (![newReed.managedObjectContext save:&error]) {
+        NSLog(@"Unable to save managed object context.");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+     */
 
     return YES;
 }

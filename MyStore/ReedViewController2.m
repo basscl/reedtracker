@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Eileen Mack. All rights reserved.
 //
 
-#import "ReedViewController.h"
-#import "ReedDetailViewController.h"
+#import "ReedViewController2.h"
+#import "ReedPropertyViewController.h"
 
-@interface ReedViewController ()
+@interface ReedViewController2 ()
 
 @property (strong) NSMutableArray *reeds;
 
 @end
 
-@implementation ReedViewController
+@implementation ReedViewController2
 
 - (NSManagedObjectContext *)managedObjectContext
 {
@@ -43,10 +43,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -92,7 +92,9 @@
     NSManagedObject *reed = [self.reeds objectAtIndex:indexPath.row];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [reed valueForKey:@"reedBrand"], [reed valueForKey:@"reedSize"]]];
     [cell.detailTextLabel setText:[reed valueForKey:@"reedProperty"]];
-    
+    NSLog(@"REEDS LOADED!!! %@", self.reeds);
+    NSLog(@"REED LOADED!!! %@", reed);
+    NSLog(@"SIZE LOADED!!! %@", [reed valueForKey:@"reedSize"]);
     
     return cell;
 }
@@ -128,57 +130,58 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"UpdateReed"]) {
-     
+    if ([[segue identifier] isEqualToString:@"SelectReed"]) {
+        NSLog(@"SelectReed");
         NSManagedObject *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        NSLog(@"selectedReed");
         NSLog(@"reed %@", selectedReed);
-        ReedDetailViewController *destViewController = segue.destinationViewController;
+        NSLog(@"prop %@", [selectedReed valueForKey:@"ReedProps"]);
+        ReedPropertyViewController *destViewController = segue.destinationViewController;
         destViewController.reed = selectedReed;
+  
     }
 }
 
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
+ #pragma mark - Navigation
+ 
+ // In a story board-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ 
  */
 
 @end

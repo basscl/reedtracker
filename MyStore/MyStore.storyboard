@@ -37,7 +37,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="q0O-jH-DdB" kind="modal" identifier="UpdateDevice" id="FHY-Vt-rPj"/>
+                                    <segue destination="q0O-jH-DdB" kind="modal" identifier="UpdateReed" id="FHY-Vt-rPj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,12 +53,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ueg-om-7Nf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="328" y="26"/>
+            <point key="canvasLocation" x="808" y="46"/>
         </scene>
-        <!--Device Detail View Controller-->
+        <!--Reed Detail View Controller-->
         <scene sceneID="KP6-X1-XaF">
             <objects>
-                <viewController id="q0O-jH-DdB" customClass="DeviceDetailViewController" sceneMemberID="viewController">
+                <viewController id="q0O-jH-DdB" customClass="ReedDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o89-mx-BaY"/>
                         <viewControllerLayoutGuide type="bottom" id="cBl-b0-KRZ"/>
@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUx-fm-xpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="26"/>
+            <point key="canvasLocation" x="1279" y="34"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mcx-xT-AAa">
@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="-212" y="728"/>
         </scene>
-        <!--Reed View Controller - Reeds-->
+        <!--Reed View Controller2 - Reeds-->
         <scene sceneID="GN6-Sg-rsg">
             <objects>
-                <tableViewController id="CEK-ft-xCn" customClass="ReedViewController" sceneMemberID="viewController">
+                <tableViewController id="CEK-ft-xCn" customClass="ReedViewController2" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ap1-on-126">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,27 +210,21 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="B3i-uG-uHm" kind="modal" identifier="UpdateDevice" id="y0W-QK-6Qy"/>
+                                    <segue destination="fnS-x8-rtU" kind="modal" identifier="SelectReed" id="oA8-Y2-mDl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Reeds" id="8vr-9N-fYT">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Wap-sx-aiw">
-                            <connections>
-                                <segue destination="B3i-uG-uHm" kind="modal" id="AlS-oM-LPD"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Reeds" id="8vr-9N-fYT"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGK-cy-zGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="714"/>
+            <point key="canvasLocation" x="353" y="1420"/>
         </scene>
-        <!--Device Detail View Controller-->
+        <!--Reed Detail View Controller-->
         <scene sceneID="uzT-qm-uWR">
             <objects>
-                <viewController id="B3i-uG-uHm" customClass="DeviceDetailViewController" sceneMemberID="viewController">
+                <viewController id="B3i-uG-uHm" customClass="ReedDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vQm-Vu-Qss"/>
                         <viewControllerLayoutGuide type="bottom" id="98M-p5-izW"/>
@@ -286,7 +280,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0H-C8-mWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="688"/>
+            <point key="canvasLocation" x="1317" y="1420"/>
+        </scene>
+        <!--Reed Property View Controller - Reeds-->
+        <scene sceneID="sY8-b5-wDe">
+            <objects>
+                <tableViewController id="fnS-x8-rtU" customClass="ReedPropertyViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Qc-1W-4HK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Yvu-dy-Sme" detailTextLabel="Exl-8K-Sa8" style="IBUITableViewCellStyleValue1" id="Os7-eN-1C7">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Os7-eN-1C7" id="a6K-SU-EW6">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="PropertyBundle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yvu-dy-Sme">
+                                            <rect key="frame" x="15" y="11" width="120" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Property" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Exl-8K-Sa8">
+                                            <rect key="frame" x="239" y="11" width="66" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Reeds" id="YRd-bc-jLj">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="UK8-7R-Xx7"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kR0-ec-XPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="1420"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -295,7 +332,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ovC-ro-NE5"/>
-        <segue reference="y0W-QK-6Qy"/>
+        <segue reference="FHY-Vt-rPj"/>
     </inferredMetricsTieBreakers>
 </document>

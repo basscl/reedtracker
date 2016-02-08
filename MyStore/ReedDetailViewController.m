@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Eileen Mack. All rights reserved.
 //
 
-#import "DeviceDetailViewController.h"
+#import "ReedDetailViewController.h"
 
-@interface DeviceDetailViewController ()
+@interface ReedDetailViewController ()
 
 @end
 
-@implementation DeviceDetailViewController
+@implementation ReedDetailViewController
 
 @synthesize reed;
 

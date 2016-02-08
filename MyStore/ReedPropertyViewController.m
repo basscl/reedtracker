@@ -64,13 +64,14 @@
     
     // Fetch the devices from persistent data store
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"ReedPropertyBundle"];
-    self.matchingBundles = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    //NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"ReedPropertyBundle"];
+    //self.allBundles = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     //if (self.reed) {
     //    NSLog(@"self.reed");
-    //self.bundleSet = [self.reed valueForKey:@"reedProps"];
-    //self.matchingBundles = [[NSMutableArray alloc] initWithObjects:[self.bundleSet allObjects], //nil];
+    self.bundleSet = [self.reed valueForKey:@"reedProps"];
+    //self.matchingBundles = [[NSMutableArray alloc] initWithObjects:[self.bundleSet allObjects], nil];
+    self.matchingBundles =[[self.bundleSet allObjects] mutableCopy];
 
 
         [self.tableView reloadData];

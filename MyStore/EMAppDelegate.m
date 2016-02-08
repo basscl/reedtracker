@@ -37,6 +37,18 @@
     // Add Address to Person
     [newReed setValue:[NSSet setWithObject:newProp] forKey:@"ReedProps"];
     
+    // Create Address
+    NSEntityDescription *anotherEntityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *anotherNewProp = [[NSManagedObject alloc] initWithEntity:anotherEntityProp insertIntoManagedObjectContext:self.managedObjectContext];
+    
+    // Set First and Last Name
+    [anotherNewProp setValue:@"tomorrow" forKey:@"date"];
+    [anotherNewProp setValue:@"wackier" forKey:@"judgment"];
+    
+    // Create Relationship
+    NSMutableSet *reedPropses = [newReed mutableSetValueForKey:@"ReedProps"];
+    [reedPropses addObject:anotherNewProp];
+    
     /*
     // Save Managed Object Context
     NSError *error = nil;

@@ -12,6 +12,7 @@
 @interface ReedViewController2 ()
 
 @property (strong) NSMutableArray *reeds;
+@property (assign) int dataFromA;
 
 @end
 
@@ -86,7 +87,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     NSManagedObject *reed = [self.reeds objectAtIndex:indexPath.row];
@@ -134,10 +136,24 @@
         NSLog(@"SelectReed");
         NSManagedObject *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         NSLog(@"reed %@", selectedReed);
-        NSLog(@"prop %@", [selectedReed valueForKey:@"ReedProps"]);
+
         ReedPropertyViewController *destViewController = segue.destinationViewController;
         destViewController.reed = selectedReed;
+        NSLog(@"DVC %@", destViewController );
   
+    }
+    
+    if ([[segue identifier] isEqualToString:@"SelectReed2"]) {
+        NSLog(@"SelectReed2");
+        NSManagedObject *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        NSLog(@"***reed***2 %@", selectedReed);
+        UINavigationController *navController = segue.destinationViewController;
+        NSLog(@"NAV %@", navController );
+        NSLog(@"TOPVC %@", [navController topViewController] );
+        ReedPropertyViewController *destViewController = navController.topViewController;
+        NSLog(@"DVC %@", destViewController );
+        destViewController.reed = selectedReed;
+        
     }
 }
 

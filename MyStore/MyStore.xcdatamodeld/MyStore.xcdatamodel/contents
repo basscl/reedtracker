@@ -8,14 +8,14 @@
     </entity>
     <entity name="ReedPropertyBundle" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="judgment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="judgement" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="reed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reed" inverseName="reedProps" inverseEntity="Reed" syncable="YES"/>
         <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="ReedPropertyBundle"/>
         </fetchedProperty>
     </entity>
     <elements>
-        <element name="Reed" positionX="-234" positionY="-24" width="128" height="105"/>
-        <element name="ReedPropertyBundle" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Reed" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ReedPropertyBundle" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

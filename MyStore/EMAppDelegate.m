@@ -17,33 +17,33 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    // Create Person
+    // Create Reed
     NSEntityDescription *entityReed = [NSEntityDescription entityForName:@"Reed" inManagedObjectContext:self.managedObjectContext];
     NSManagedObject *newReed = [[NSManagedObject alloc] initWithEntity:entityReed insertIntoManagedObjectContext:self.managedObjectContext];
     
-    // Set First and Lats Name
+    // Set Reed values
     [newReed setValue:@"Vandoren" forKey:@"reedBrand"];
     [newReed setValue:@"4.5" forKey:@"reedSize"];
     [newReed setValue:@"hard" forKey:@"reedProperty"];
     
-    // Create Address
+    // Create Property
     NSEntityDescription *entityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:self.managedObjectContext];
     NSManagedObject *newProp = [[NSManagedObject alloc] initWithEntity:entityProp insertIntoManagedObjectContext:self.managedObjectContext];
     
-    // Set First and Last Name
+    // Set Properties
     [newProp setValue:@"today" forKey:@"date"];
-    [newProp setValue:@"wack" forKey:@"judgment"];
+    [newProp setValue:@"wack" forKey:@"judgement"];
     
     // Add Address to Person
     [newReed setValue:[NSSet setWithObject:newProp] forKey:@"ReedProps"];
     
-    // Create Address
+    // Create Property
     NSEntityDescription *anotherEntityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:self.managedObjectContext];
     NSManagedObject *anotherNewProp = [[NSManagedObject alloc] initWithEntity:anotherEntityProp insertIntoManagedObjectContext:self.managedObjectContext];
     
     // Set First and Last Name
     [anotherNewProp setValue:@"tomorrow" forKey:@"date"];
-    [anotherNewProp setValue:@"wackier" forKey:@"judgment"];
+    [anotherNewProp setValue:@"wackier" forKey:@"judgement"];
     
     // Create Relationship
     NSMutableSet *reedPropses = [newReed mutableSetValueForKey:@"ReedProps"];

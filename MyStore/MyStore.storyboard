@@ -14,7 +14,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="G71-Am-K2n" detailTextLabel="3hc-Vr-2xg" style="IBUITableViewCellStyleValue1" id="KfK-wz-z2G">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KfK-wz-z2G" id="IhV-iT-fCB">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -53,7 +53,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ueg-om-7Nf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="334"/>
+            <point key="canvasLocation" x="867" y="181"/>
         </scene>
         <!--Reed Detail View Controller-->
         <scene sceneID="KP6-X1-XaF">
@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUx-fm-xpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359" y="334"/>
+            <point key="canvasLocation" x="1370" y="181"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mcx-xT-AAa">
@@ -185,7 +185,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCy-t9-qte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="728"/>
+            <point key="canvasLocation" x="-223" y="728"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="exk-Jd-3SI">
@@ -201,9 +201,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWD-Bn-ZhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="1418"/>
+            <point key="canvasLocation" x="1294" y="1983"/>
         </scene>
-        <!--Reed Property View Controller - Poperties-->
+        <!--Reed Property View Controller - Properties-->
         <scene sceneID="XyV-Xw-F2l">
             <objects>
                 <tableViewController id="c4e-6K-28E" customClass="ReedPropertyViewController" sceneMemberID="viewController">
@@ -212,7 +212,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="m6i-hj-9Ri" detailTextLabel="uS4-uu-eIt" style="IBUITableViewCellStyleValue1" id="JZp-Ug-5yG">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="m6i-hj-9Ri" detailTextLabel="hBM-d6-jbE" style="IBUITableViewCellStyleValue1" id="JZp-Ug-5yG">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JZp-Ug-5yG" id="0xH-Yq-bAl">
@@ -226,7 +226,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uS4-uu-eIt">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hBM-d6-jbE">
                                             <rect key="frame" x="261" y="11" width="44" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -235,6 +235,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="B3i-uG-uHm" kind="modal" identifier="UpdateProperty" id="VXp-xz-OXt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -242,13 +245,22 @@
                             <outlet property="delegate" destination="c4e-6K-28E" id="d2I-oc-f7m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Poperties" id="PAT-Rp-Koo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Kp-dL-yKY"/>
+                    <navigationItem key="navigationItem" title="Properties" id="PAT-Rp-Koo">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cUD-9b-wF7">
+                            <connections>
+                                <segue destination="JB6-xB-mkv" kind="push" id="oEu-ty-NPS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Kp-dL-yKY">
+                            <connections>
+                                <segue destination="B3i-uG-uHm" kind="modal" identifier="AddProperty" id="61K-rt-ZoZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQ9-4m-6NX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="491" y="1428"/>
+            <point key="canvasLocation" x="1736" y="1601"/>
         </scene>
         <!--Reed View Controller2 - Reeds-->
         <scene sceneID="GN6-Sg-rsg">
@@ -260,7 +272,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="mzG-Mc-9gi" detailTextLabel="blv-hw-agB" style="IBUITableViewCellStyleValue1" id="CPp-Wf-Doj">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CPp-Wf-Doj" id="0lB-By-1ky">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -292,12 +304,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGK-cy-zGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="1092"/>
+            <point key="canvasLocation" x="867" y="864"/>
         </scene>
-        <!--Reed Detail View Controller-->
+        <!--Property Detail View Controller-->
         <scene sceneID="uzT-qm-uWR">
             <objects>
-                <viewController id="B3i-uG-uHm" customClass="ReedDetailViewController" sceneMemberID="viewController">
+                <viewController id="B3i-uG-uHm" customClass="PropertyDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vQm-Vu-Qss"/>
                         <viewControllerLayoutGuide type="bottom" id="98M-p5-izW"/>
@@ -313,31 +325,25 @@
                                     <navigationItem title="Detail" id="NQh-Ma-bpW">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yvc-ey-MRc">
                                             <connections>
-                                                <action selector="cancel:" destination="B3i-uG-uHm" id="WeV-um-rde"/>
+                                                <action selector="cancel:" destination="B3i-uG-uHm" id="Z93-SO-7az"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="m7Q-dK-kcH">
                                             <connections>
-                                                <action selector="save:" destination="B3i-uG-uHm" id="7KD-Z6-lVe"/>
+                                                <action selector="save:" destination="B3i-uG-uHm" id="0MR-ds-GIx"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fen-c5-8qU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fen-c5-8qU">
                                 <rect key="frame" x="20" y="84" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Size" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZaQ-FD-XCR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Judgement" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZaQ-FD-XCR">
                                 <rect key="frame" x="20" y="122" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quality" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQE-Q5-j1m">
-                                <rect key="frame" x="20" y="160" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -346,14 +352,13 @@
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="reedBrandTextField" destination="fen-c5-8qU" id="ZdX-At-CE0"/>
-                        <outlet property="reedPropertyTextField" destination="mQE-Q5-j1m" id="Ovz-4d-5xa"/>
-                        <outlet property="reedSizeTextField" destination="ZaQ-FD-XCR" id="twR-DX-SQq"/>
+                        <outlet property="Date" destination="fen-c5-8qU" id="y9w-ul-s3C"/>
+                        <outlet property="Judgement" destination="ZaQ-FD-XCR" id="9MF-2a-KAs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0H-C8-mWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1789" y="1092"/>
+            <point key="canvasLocation" x="2239" y="1606"/>
         </scene>
         <!--Reed Property View Controller - Reeds-->
         <scene sceneID="sY8-b5-wDe">
@@ -390,13 +395,17 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="cancel" id="FJK-Mg-dLH"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Reeds" id="YRd-bc-jLj">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="UK8-7R-Xx7"/>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kR0-ec-XPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1351" y="1100"/>
+            <point key="canvasLocation" x="1345" y="872"/>
         </scene>
         <!--Reed View Controller2 - Reeds-->
         <scene sceneID="D54-gy-rs2">
@@ -436,11 +445,17 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Reeds" id="6xA-Pd-Kzc"/>
+                    <navigationItem key="navigationItem" title="Reeds" id="6xA-Pd-Kzc">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="SC2-Vz-SDf">
+                            <connections>
+                                <segue destination="2Qd-5Q-EDv" kind="push" id="KgC-dp-7cF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xld-g3-u3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-347" y="1428"/>
+            <point key="canvasLocation" x="876" y="1606"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -449,6 +464,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="FHY-Vt-rPj"/>
+        <segue reference="KgC-dp-7cF"/>
+        <segue reference="oEu-ty-NPS"/>
+        <segue reference="61K-rt-ZoZ"/>
+        <segue reference="ovC-ro-NE5"/>
     </inferredMetricsTieBreakers>
 </document>

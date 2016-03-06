@@ -24,6 +24,7 @@
 		315094221B9E3FD700415E29 /* MyStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 315094211B9E3FD700415E29 /* MyStore.storyboard */; };
 		315094251B9E44D800415E29 /* ReedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 315094241B9E44D800415E29 /* ReedViewController.m */; };
 		3150942B1B9E45DB00415E29 /* ReedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3150942A1B9E45DB00415E29 /* ReedDetailViewController.m */; };
+		316CA4621C72ED37000D34C6 /* PropertyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 316CA4611C72ED37000D34C6 /* PropertyDetailViewController.m */; };
 		3173ED531C6307A2001EDD7E /* ReedViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3173ED521C6307A2001EDD7E /* ReedViewController2.m */; };
 		3173ED591C631328001EDD7E /* ReedPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3173ED581C631328001EDD7E /* ReedPropertyViewController.m */; };
 		31C63E8E1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C63E8C1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld */; };
@@ -62,6 +63,8 @@
 		315094241B9E44D800415E29 /* ReedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedViewController.m; sourceTree = "<group>"; };
 		315094291B9E45DB00415E29 /* ReedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReedDetailViewController.h; sourceTree = "<group>"; };
 		3150942A1B9E45DB00415E29 /* ReedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedDetailViewController.m; sourceTree = "<group>"; };
+		316CA4601C72ED37000D34C6 /* PropertyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDetailViewController.h; sourceTree = "<group>"; };
+		316CA4611C72ED37000D34C6 /* PropertyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDetailViewController.m; sourceTree = "<group>"; };
 		3173ED511C6307A2001EDD7E /* ReedViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReedViewController2.h; sourceTree = "<group>"; };
 		3173ED521C6307A2001EDD7E /* ReedViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedViewController2.m; sourceTree = "<group>"; };
 		3173ED571C631328001EDD7E /* ReedPropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReedPropertyViewController.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				3173ED521C6307A2001EDD7E /* ReedViewController2.m */,
 				3173ED571C631328001EDD7E /* ReedPropertyViewController.h */,
 				3173ED581C631328001EDD7E /* ReedPropertyViewController.m */,
+				316CA4601C72ED37000D34C6 /* PropertyDetailViewController.h */,
+				316CA4611C72ED37000D34C6 /* PropertyDetailViewController.m */,
 			);
 			path = MyStore;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316CA4621C72ED37000D34C6 /* PropertyDetailViewController.m in Sources */,
 				3173ED591C631328001EDD7E /* ReedPropertyViewController.m in Sources */,
 				315094251B9E44D800415E29 /* ReedViewController.m in Sources */,
 				31C63E8E1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld in Sources */,

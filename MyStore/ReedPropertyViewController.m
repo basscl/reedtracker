@@ -7,6 +7,7 @@
 //
 
 #import "ReedPropertyViewController.h"
+#import "PropertyDetailViewController.h"
 
 @interface ReedPropertyViewController ()
 
@@ -63,7 +64,7 @@
     [super viewDidAppear:animated];
     
     // Fetch the devices from persistent data store
-    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    //NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     //NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"ReedPropertyBundle"];
     //self.allBundles = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
@@ -104,18 +105,20 @@
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+   if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
     }
+
     
     // Configure the cell...
     NSManagedObject *bundle = [self.matchingBundles objectAtIndex:indexPath.row];
 
     [cell.textLabel setText:[NSString stringWithFormat:@"%@", [bundle valueForKey:@"date"]]];
-    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@", [bundle valueForKey:@"judgment"]]];
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@", [bundle valueForKey:@"judgement"]]];
     NSLog(@"PROPS LOADED!!! %@", self.matchingBundles[0]);
     NSLog(@"PROP LOADED!!! %@", bundle);
     NSLog(@"DATE LOADED!!! %@", [bundle valueForKey:@"date"]);
+    NSLog(@"JUDGEMENT LOADED!!! %@", [bundle valueForKey:@"judgement"]);
 
     return cell;
 }
@@ -128,14 +131,45 @@
     return YES;
 }
 
-/*
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"UpdateProperty"]) {
+        NSLog(@"selectedProperty");
+        NSManagedObject *selectedProperty = [self.matchingBundles objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+
+        NSLog(@"property %@", selectedProperty);
+        PropertyDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.property = selectedProperty;
+        //NSLog(@"self.reed %@", self.reed);
+        //destViewController.reed = self.reed;
+        //NSLog(@"sending reed %@", destViewController.reed);
+        
+    }
+    
+    if ([[segue identifier] isEqualToString:@"AddProperty"]) {
+        //NSLog(@"selectedProperty");
+        //NSManagedObject *selectedProperty = [self.matchingBundles objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        
+        //NSLog(@"property %@", selectedProperty);
+        PropertyDetailViewController *destViewController = segue.destinationViewController;
+        //destViewController.property = selectedProperty;
+        NSLog(@"self.reed %@", self.reed);
+        destViewController.reed = self.reed;
+        NSLog(@"sending reed %@", destViewController.reed);
+        
+    }
+}
+
+
+
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObjectContext *context = [self managedObjectContext];
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
-        [context deleteObject:[self.reeds objectAtIndex:indexPath.row]];
+        [context deleteObject:[self.matchingBundles objectAtIndex:indexPath.row]];
         
         NSError *error = nil;
         if (![context save:&error]) {
@@ -144,11 +178,12 @@
         }
         
         // Remove device from table view
-        [self.reeds removeObjectAtIndex:indexPath.row];
+        [self.matchingBundles removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
+ /*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"UpdateReed"]) {

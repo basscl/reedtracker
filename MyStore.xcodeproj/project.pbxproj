@@ -27,6 +27,7 @@
 		316CA4621C72ED37000D34C6 /* PropertyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 316CA4611C72ED37000D34C6 /* PropertyDetailViewController.m */; };
 		3173ED531C6307A2001EDD7E /* ReedViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3173ED521C6307A2001EDD7E /* ReedViewController2.m */; };
 		3173ED591C631328001EDD7E /* ReedPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3173ED581C631328001EDD7E /* ReedPropertyViewController.m */; };
+		31B093D01C8F3C3D00FD28F3 /* BoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B093CF1C8F3C3D00FD28F3 /* BoxViewController.m */; };
 		31C63E8E1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C63E8C1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,8 @@
 		3173ED521C6307A2001EDD7E /* ReedViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedViewController2.m; sourceTree = "<group>"; };
 		3173ED571C631328001EDD7E /* ReedPropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReedPropertyViewController.h; sourceTree = "<group>"; };
 		3173ED581C631328001EDD7E /* ReedPropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedPropertyViewController.m; sourceTree = "<group>"; };
+		31B093CE1C8F3C3D00FD28F3 /* BoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxViewController.h; sourceTree = "<group>"; };
+		31B093CF1C8F3C3D00FD28F3 /* BoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxViewController.m; sourceTree = "<group>"; };
 		31C63E8D1C67C5BE00D1CCA7 /* MyStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyStore.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,16 +141,7 @@
 				31C63E8C1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld */,
 				315094031B9E3DF100415E29 /* Images.xcassets */,
 				315093F51B9E3DF100415E29 /* Supporting Files */,
-				315094231B9E44D800415E29 /* ReedViewController.h */,
-				315094241B9E44D800415E29 /* ReedViewController.m */,
-				315094291B9E45DB00415E29 /* ReedDetailViewController.h */,
-				3150942A1B9E45DB00415E29 /* ReedDetailViewController.m */,
-				3173ED511C6307A2001EDD7E /* ReedViewController2.h */,
-				3173ED521C6307A2001EDD7E /* ReedViewController2.m */,
-				3173ED571C631328001EDD7E /* ReedPropertyViewController.h */,
-				3173ED581C631328001EDD7E /* ReedPropertyViewController.m */,
-				316CA4601C72ED37000D34C6 /* PropertyDetailViewController.h */,
-				316CA4611C72ED37000D34C6 /* PropertyDetailViewController.m */,
+				31B093CD1C8F3BC700FD28F3 /* ViewControllers */,
 			);
 			path = MyStore;
 			sourceTree = "<group>";
@@ -179,6 +173,25 @@
 				315094141B9E3DF100415E29 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		31B093CD1C8F3BC700FD28F3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				315094231B9E44D800415E29 /* ReedViewController.h */,
+				315094241B9E44D800415E29 /* ReedViewController.m */,
+				315094291B9E45DB00415E29 /* ReedDetailViewController.h */,
+				3150942A1B9E45DB00415E29 /* ReedDetailViewController.m */,
+				31B093CE1C8F3C3D00FD28F3 /* BoxViewController.h */,
+				31B093CF1C8F3C3D00FD28F3 /* BoxViewController.m */,
+				3173ED511C6307A2001EDD7E /* ReedViewController2.h */,
+				3173ED521C6307A2001EDD7E /* ReedViewController2.m */,
+				3173ED571C631328001EDD7E /* ReedPropertyViewController.h */,
+				3173ED581C631328001EDD7E /* ReedPropertyViewController.m */,
+				316CA4601C72ED37000D34C6 /* PropertyDetailViewController.h */,
+				316CA4611C72ED37000D34C6 /* PropertyDetailViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +296,7 @@
 				315094251B9E44D800415E29 /* ReedViewController.m in Sources */,
 				31C63E8E1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld in Sources */,
 				3173ED531C6307A2001EDD7E /* ReedViewController2.m in Sources */,
+				31B093D01C8F3C3D00FD28F3 /* BoxViewController.m in Sources */,
 				315093FF1B9E3DF100415E29 /* EMAppDelegate.m in Sources */,
 				3150942B1B9E45DB00415E29 /* ReedDetailViewController.m in Sources */,
 				315093FB1B9E3DF100415E29 /* main.m in Sources */,

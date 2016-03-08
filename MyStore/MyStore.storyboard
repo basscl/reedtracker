@@ -155,7 +155,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JB6-xB-mkv" kind="push" id="bOI-5C-sR1"/>
+                                    <segue destination="0FT-M5-Z1z" kind="modal" id="bOI-5C-sR1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0U-le-bNX">
@@ -164,6 +164,9 @@
                                 <state key="normal" title="Box">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="laQ-Uq-QNJ" kind="modal" id="dF4-ms-mNw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -208,7 +211,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWD-Bn-ZhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="1983"/>
+            <point key="canvasLocation" x="1820" y="1983"/>
         </scene>
         <!--Reed Property View Controller - Properties-->
         <scene sceneID="XyV-Xw-F2l">
@@ -255,7 +258,7 @@
                     <navigationItem key="navigationItem" title="Properties" id="PAT-Rp-Koo">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cUD-9b-wF7">
                             <connections>
-                                <segue destination="JB6-xB-mkv" kind="push" id="oEu-ty-NPS"/>
+                                <segue destination="0FT-M5-Z1z" kind="modal" id="oEu-ty-NPS"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Kp-dL-yKY">
@@ -267,7 +270,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQ9-4m-6NX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736" y="1601"/>
+            <point key="canvasLocation" x="2262" y="1601"/>
         </scene>
         <!--Reed View Controller2 - Reeds-->
         <scene sceneID="GN6-Sg-rsg">
@@ -365,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0H-C8-mWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2239" y="1606"/>
+            <point key="canvasLocation" x="2765" y="1606"/>
         </scene>
         <!--Reed Property View Controller - Reeds-->
         <scene sceneID="sY8-b5-wDe">
@@ -424,7 +427,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="wdX-mL-MTe" detailTextLabel="R5F-q6-Xf8" style="IBUITableViewCellStyleValue1" id="AGi-aW-H7i">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AGi-aW-H7i" id="uCG-Vb-lLK">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -455,14 +458,80 @@
                     <navigationItem key="navigationItem" title="Reeds" id="6xA-Pd-Kzc">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="SC2-Vz-SDf">
                             <connections>
-                                <segue destination="2Qd-5Q-EDv" kind="push" id="KgC-dp-7cF"/>
+                                <segue destination="2Qd-5Q-EDv" kind="modal" id="KgC-dp-7cF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xld-g3-u3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1402" y="1606"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mKP-qt-O9Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0FT-M5-Z1z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Fom-Zs-zuY"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kZ7-cC-0dR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JB6-xB-mkv" kind="relationship" relationship="rootViewController" id="VzW-eP-UXL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v8f-PL-Y4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="876" y="1606"/>
+        </scene>
+        <!--Box View Controller - Boxes-->
+        <scene sceneID="Ycc-aP-EDj">
+            <objects>
+                <tableViewController id="xbU-mf-z27" customClass="BoxViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lDf-wX-XWJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JsM-dl-22A">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JsM-dl-22A" id="yhl-WH-HqJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Boxes" id="ebg-fd-qLS">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="SLn-U6-5ws"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="BJ2-gG-dsZ">
+                            <connections>
+                                <segue destination="2Qd-5Q-EDv" kind="push" id="vbM-Dn-iaB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wiz-bj-r7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="354" y="1567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Stu-g0-Hgi">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="laQ-Uq-QNJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YnH-d6-ju2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xbU-mf-z27" kind="relationship" relationship="rootViewController" id="RqS-Ft-rFf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ww9-Yp-eTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-180" y="1567"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -471,7 +540,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KgC-dp-7cF"/>
+        <segue reference="vbM-Dn-iaB"/>
         <segue reference="bOI-5C-sR1"/>
         <segue reference="61K-rt-ZoZ"/>
         <segue reference="ovC-ro-NE5"/>

@@ -50,6 +50,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ueg-om-7Nf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -461,6 +462,7 @@
                                 <segue destination="2Qd-5Q-EDv" kind="modal" id="KgC-dp-7cF"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3Lb-0W-n0D"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xld-g3-u3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -541,8 +543,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="oEu-ty-NPS"/>
-        <segue reference="61K-rt-ZoZ"/>
-        <segue reference="vbM-Dn-iaB"/>
+        <segue reference="KgC-dp-7cF"/>
         <segue reference="ovC-ro-NE5"/>
+        <segue reference="61K-rt-ZoZ"/>
     </inferredMetricsTieBreakers>
 </document>

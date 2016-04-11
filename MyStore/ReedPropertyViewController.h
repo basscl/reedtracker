@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ReedViewController2.h"
+#import "Reed.h"
 
 @interface ReedPropertyViewController : UITableViewController
 
-@property (strong) NSManagedObject *reed;
+@property (strong) Reed *reed;
 
 
 @end

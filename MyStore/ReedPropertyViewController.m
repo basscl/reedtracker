@@ -8,6 +8,8 @@
 
 #import "ReedPropertyViewController.h"
 #import "PropertyDetailViewController.h"
+//#import "Reed.h"
+#import "ReedPropertyBundle.h"
 
 @interface ReedPropertyViewController ()
 
@@ -70,7 +72,7 @@
     
     //if (self.reed) {
     //    NSLog(@"self.reed");
-    self.bundleSet = [self.reed valueForKey:@"reedProps"];
+    self.bundleSet = self.reed.reedProps;
     //self.matchingBundles = [[NSMutableArray alloc] initWithObjects:[self.bundleSet allObjects], nil];
     self.matchingBundles =[[self.bundleSet allObjects] mutableCopy];
 

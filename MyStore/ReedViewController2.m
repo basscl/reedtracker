@@ -9,6 +9,7 @@
 #import "ReedViewController2.h"
 #import "ReedPropertyViewController.h"
 #import "Reed.h"
+#import "ReedPropertyBundle.h"
 
 @interface ReedViewController2 ()
 

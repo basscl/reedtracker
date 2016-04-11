@@ -8,6 +8,7 @@
 
 #import "ReedViewController2.h"
 #import "ReedPropertyViewController.h"
+#import "Reed.h"
 
 @interface ReedViewController2 ()
 
@@ -91,12 +92,12 @@
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    NSManagedObject *reed = [self.reeds objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [reed valueForKey:@"reedBrand"], [reed valueForKey:@"reedSize"]]];
-    [cell.detailTextLabel setText:[reed valueForKey:@"reedProperty"]];
+    Reed *reed = [self.reeds objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", reed.reedBrand, reed.reedSize]];
+    [cell.detailTextLabel setText:reed.reedProperty];
     NSLog(@"REEDS LOADED!!! %@", self.reeds);
     NSLog(@"REED LOADED!!! %@", reed);
-    NSLog(@"SIZE LOADED!!! %@", [reed valueForKey:@"reedSize"]);
+    NSLog(@"SIZE LOADED!!! %@", reed.reedSize);
     
     return cell;
 }
@@ -145,7 +146,7 @@
     
     if ([[segue identifier] isEqualToString:@"SelectReed2"]) {
         NSLog(@"SelectReed2");
-        NSManagedObject *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        Reed *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         NSLog(@"***reed***2 %@", selectedReed);
         UINavigationController *navController = segue.destinationViewController;
         NSLog(@"NAV %@", navController );

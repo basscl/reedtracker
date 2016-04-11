@@ -7,7 +7,7 @@
         <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="reeds" optional="YES" toMany="YES" maxCount="10" deletionRule="Cascade" destinationEntity="Reed" inverseName="box" inverseEntity="Reed" syncable="YES"/>
     </entity>
-    <entity name="Reed" syncable="YES">
+    <entity name="Reed" representedClassName="Reed" syncable="YES">
         <attribute name="reedBrand" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reedIdMark" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reedNumber" optional="YES" attributeType="String" syncable="YES"/>

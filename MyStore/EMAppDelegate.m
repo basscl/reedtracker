@@ -7,6 +7,7 @@
 //
 
 #import "EMAppDelegate.h"
+#import "Reed.h"
 
 @implementation EMAppDelegate
 
@@ -19,12 +20,12 @@
     
     // Create Reed
     NSEntityDescription *entityReed = [NSEntityDescription entityForName:@"Reed" inManagedObjectContext:self.managedObjectContext];
-    NSManagedObject *newReed = [[NSManagedObject alloc] initWithEntity:entityReed insertIntoManagedObjectContext:self.managedObjectContext];
+    Reed *newReed = [[Reed alloc] initWithEntity:entityReed insertIntoManagedObjectContext:self.managedObjectContext];
     
     // Set Reed values
-    [newReed setValue:@"Vandoren" forKey:@"reedBrand"];
-    [newReed setValue:@"4.5" forKey:@"reedSize"];
-    [newReed setValue:@"hard" forKey:@"reedProperty"];
+    newReed.reedBrand = @"Vandoren";
+    newReed.reedSize = @"4.5";
+    newReed.reedProperty = @"hard";
     
     // Create Property
     NSEntityDescription *entityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:self.managedObjectContext];

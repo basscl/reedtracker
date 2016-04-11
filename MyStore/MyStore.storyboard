@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F2542" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="v1j-Fz-cx4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F2560" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="v1j-Fz-cx4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -53,7 +53,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ueg-om-7Nf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="181"/>
+            <point key="canvasLocation" x="867" y="-155"/>
         </scene>
         <!--Reed Detail View Controller-->
         <scene sceneID="KP6-X1-XaF">
@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUx-fm-xpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1370" y="181"/>
+            <point key="canvasLocation" x="1345" y="-163"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mcx-xT-AAa">
@@ -145,7 +145,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CEK-ft-xCn" kind="push" id="Vtd-B8-1iK"/>
+                                    <segue destination="CEK-ft-xCn" kind="modal" id="Vtd-B8-1iK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZG-YO-k0l">
@@ -158,7 +158,7 @@
                                     <segue destination="0FT-M5-Z1z" kind="modal" id="bOI-5C-sR1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0U-le-bNX">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0U-le-bNX">
                                 <rect key="frame" x="145" y="405" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Box">
@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHM-Tt-UcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="314" y="728"/>
+            <point key="canvasLocation" x="302" y="714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9FZ-xZ-igt">
@@ -211,7 +211,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWD-Bn-ZhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="1983"/>
+            <point key="canvasLocation" x="1824" y="1171"/>
         </scene>
         <!--Reed Property View Controller - Properties-->
         <scene sceneID="XyV-Xw-F2l">
@@ -270,7 +270,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQ9-4m-6NX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2262" y="1601"/>
+            <point key="canvasLocation" x="2266" y="1184"/>
         </scene>
         <!--Reed View Controller2 - Reeds-->
         <scene sceneID="GN6-Sg-rsg">
@@ -314,7 +314,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGK-cy-zGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="864"/>
+            <point key="canvasLocation" x="867" y="518"/>
         </scene>
         <!--Property Detail View Controller-->
         <scene sceneID="uzT-qm-uWR">
@@ -368,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0H-C8-mWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2765" y="1606"/>
+            <point key="canvasLocation" x="2765" y="1171"/>
         </scene>
         <!--Reed Property View Controller - Reeds-->
         <scene sceneID="sY8-b5-wDe">
@@ -415,7 +415,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kR0-ec-XPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1345" y="872"/>
+            <point key="canvasLocation" x="1345" y="526"/>
         </scene>
         <!--Reed View Controller2 - Reeds-->
         <scene sceneID="D54-gy-rs2">
@@ -465,7 +465,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xld-g3-u3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1402" y="1606"/>
+            <point key="canvasLocation" x="1352" y="1192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mKP-qt-O9Z">
@@ -484,7 +484,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8f-PL-Y4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876" y="1606"/>
+            <point key="canvasLocation" x="862" y="1184"/>
         </scene>
         <!--Box View Controller - Boxes-->
         <scene sceneID="Ycc-aP-EDj">
@@ -516,7 +516,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wiz-bj-r7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="354" y="1567"/>
+            <point key="canvasLocation" x="1380" y="1923"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Stu-g0-Hgi">
@@ -531,7 +531,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ww9-Yp-eTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-180" y="1567"/>
+            <point key="canvasLocation" x="874" y="1923"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -540,9 +540,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vbM-Dn-iaB"/>
-        <segue reference="bOI-5C-sR1"/>
+        <segue reference="oEu-ty-NPS"/>
         <segue reference="61K-rt-ZoZ"/>
+        <segue reference="vbM-Dn-iaB"/>
         <segue reference="ovC-ro-NE5"/>
     </inferredMetricsTieBreakers>
 </document>

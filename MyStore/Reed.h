@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-
+#import "Box.h"
 
 @interface Reed : NSManagedObject
 
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * reedProperty;
 @property (nonatomic, retain) NSString * reedSize;
 @property (nonatomic, retain) NSString * reedIdMark;
-@property (nonatomic, retain) NSString * reedNumber;
+@property (nonatomic) int reedNumber;
 @property (nonatomic, retain) NSSet *reedProps;
 @property (nonatomic, retain) NSManagedObject *box;
 @end
@@ -27,5 +27,7 @@
 - (void)removeReedPropsObject:(NSManagedObject *)value;
 - (void)addReedProps:(NSSet *)values;
 - (void)removeReedProps:(NSSet *)values;
+
+- (id)initWithBox:(Box *)aBox;
 
 @end

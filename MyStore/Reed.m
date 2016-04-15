@@ -19,4 +19,16 @@
 @dynamic reedProps;
 @dynamic box;
 
+- (id)initWithBox:(Box *)aBox {
+    self = [super init];
+    if (self) {
+        // Any custom setup work goes here
+        self.box = aBox;
+        self.reedBrand = aBox.brand;
+        self.reedSize = aBox.size;
+        
+    }
+    return self;
+}
+
 @end

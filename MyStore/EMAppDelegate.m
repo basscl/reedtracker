@@ -8,6 +8,7 @@
 
 #import "EMAppDelegate.h"
 #import "Reed.h"
+#import "Box.h"
 
 @implementation EMAppDelegate
 
@@ -17,6 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //Create Box
+    NSEntityDescription *entityBox = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:self.managedObjectContext];
+    Box *testBox = [[Box alloc] initWithEntity:entityBox insertIntoManagedObjectContext:self.managedObjectContext];
+
+    testBox.size = @"5";
+    testBox.brand = @"Homemade";
+    testBox.locationStarted = @"Home";
+        NSLog(@"BOX!!! %@", testBox);
+    
+    
+    
     
     // Create Reed
     NSEntityDescription *entityReed = [NSEntityDescription entityForName:@"Reed" inManagedObjectContext:self.managedObjectContext];
@@ -49,6 +61,8 @@
     // Create Relationship
     NSMutableSet *reedPropses = [newReed mutableSetValueForKey:@"ReedProps"];
     [reedPropses addObject:anotherNewProp];
+    
+    
     
     /*
     // Save Managed Object Context

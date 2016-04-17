@@ -25,7 +25,9 @@
     testBox.size = @"5";
     testBox.brand = @"Homemade";
     testBox.locationStarted = @"Home";
+    [testBox add10Reeds];
         NSLog(@"BOX!!! %@", testBox);
+    NSLog(@"BOX REEDS!!! %@", testBox.reeds);
     
     
     
@@ -38,6 +40,8 @@
     newReed.reedBrand = @"Vandoren";
     newReed.reedSize = @"4.5";
     newReed.reedProperty = @"hard";
+    newReed.reedNumber = 1;
+
     
     // Create Property
     NSEntityDescription *entityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:self.managedObjectContext];
@@ -47,7 +51,7 @@
     [newProp setValue:@"today" forKey:@"date"];
     [newProp setValue:@"wack" forKey:@"judgement"];
     
-    // Add Address to Person
+    // Add Property to Person
     [newReed setValue:[NSSet setWithObject:newProp] forKey:@"ReedProps"];
     
     // Create Property
@@ -61,6 +65,8 @@
     // Create Relationship
     NSMutableSet *reedPropses = [newReed mutableSetValueForKey:@"ReedProps"];
     [reedPropses addObject:anotherNewProp];
+    
+
     
     
     

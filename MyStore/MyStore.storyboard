@@ -169,6 +169,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kY9-7Y-d8F"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHM-Tt-UcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -410,7 +411,7 @@
             </objects>
             <point key="canvasLocation" x="867" y="-155"/>
         </scene>
-        <!--Box View Controller - Reeds-->
+        <!--Box View Controller - Boxes-->
         <scene sceneID="AmZ-Fb-IKY">
             <objects>
                 <tableViewController id="96k-NA-Tf3" customClass="BoxViewController" sceneMemberID="viewController">
@@ -445,8 +446,12 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Reeds" id="zI0-am-X6z">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="cs3-Zi-BzD"/>
+                    <navigationItem key="navigationItem" title="Boxes" id="zI0-am-X6z">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="cs3-Zi-BzD">
+                            <connections>
+                                <segue destination="2Qd-5Q-EDv" kind="modal" id="67r-SB-97s"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WR0-yO-jKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -480,7 +485,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="bOI-5C-sR1"/>
-        <segue reference="KgC-dp-7cF"/>
+        <segue reference="67r-SB-97s"/>
         <segue reference="ovC-ro-NE5"/>
         <segue reference="61K-rt-ZoZ"/>
     </inferredMetricsTieBreakers>

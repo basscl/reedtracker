@@ -32,7 +32,8 @@
 - (id)initWithnumReeds:(int )num;
 - (id)initBoxOf5;
 - (id)initBoxOf10;
-- (id)add10Reeds;
+- (void)add10Reeds;
+- (void)add5Reeds;
 
 
 

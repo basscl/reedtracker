@@ -159,8 +159,8 @@
 			children = (
 				310200511CC17BC20041BF83 /* Models */,
 				315093FD1B9E3DF100415E29 /* EMAppDelegate.h */,
-				315094211B9E3FD700415E29 /* MyStore.storyboard */,
 				315093FE1B9E3DF100415E29 /* EMAppDelegate.m */,
+				315094211B9E3FD700415E29 /* MyStore.storyboard */,
 				31C63E8C1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld */,
 				315094031B9E3DF100415E29 /* Images.xcassets */,
 				315093F51B9E3DF100415E29 /* Supporting Files */,

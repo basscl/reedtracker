@@ -29,9 +29,6 @@
 - (void)removeReeds:(NSSet *)values;
 
 
-- (id)initWithnumReeds:(int )num;
-- (id)initBoxOf5;
-- (id)initBoxOf10;
 - (void)add10Reeds;
 - (void)add5Reeds;
 

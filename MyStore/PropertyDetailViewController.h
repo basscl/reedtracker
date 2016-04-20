@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reed.h"
+#import "ReedPropertyBundle.h"
+
 
 @interface PropertyDetailViewController : UIViewController
-@property (strong) NSManagedObject *property;
-@property (strong) NSManagedObject *reed;
+@property (strong) ReedPropertyBundle *property;
+@property (strong) Reed *reed;
 @property (weak, nonatomic) IBOutlet UITextField *Date;
 @property (weak, nonatomic) IBOutlet UITextField *Judgement;
 

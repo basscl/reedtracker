@@ -39,9 +39,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     if (self.reed) {
-        [self.reedBrandTextField setText:[self.reed valueForKey:@"reedBrand"]];
-        [self.reedSizeTextField setText:[self.reed valueForKey:@"reedSize"]];
-        [self.reedPropertyTextField setText:[self.reed valueForKey:@"reedProperty"]];
+        self.reedBrandTextField.text = self.reed.reedBrand;
+        self.reedSizeTextField.text = self.reed.reedSize;
+        self.reedPropertyTextField.text = self.reed.reedProperty;
     }
     
 }
@@ -57,16 +57,16 @@
     
     if (self.reed) {
         // Update existing device
-        [self.reed setValue:self.reedBrandTextField.text forKey:@"reedBrand"];
-        [self.reed setValue:self.reedSizeTextField.text forKey:@"reedSize"];
-        [self.reed setValue:self.reedPropertyTextField.text forKey:@"reedProperty"];
+        self.reed.reedBrand = self.reedBrandTextField.text;
+        self.reed.reedSize  = self.reedSizeTextField.text;
+        self.reed.reedProperty  = self.reedPropertyTextField.text;
         
     } else {
         // Create a new device
-        NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"Reed" inManagedObjectContext:context];
-        [newDevice setValue:self.reedBrandTextField.text forKey:@"reedBrand"];
-        [newDevice setValue:self.reedSizeTextField.text forKey:@"reedSize"];
-        [newDevice setValue:self.reedPropertyTextField.text forKey:@"reedProperty"];
+        Reed *newReed = [NSEntityDescription insertNewObjectForEntityForName:@"Reed" inManagedObjectContext:context];
+        newReed.reedBrand = self.reedBrandTextField.text;
+        newReed.reedSize  = self.reedSizeTextField.text;
+        newReed.reedProperty  = self.reedPropertyTextField.text;
     }
     
     NSError *error = nil;

@@ -44,8 +44,8 @@
     NSLog(@"received self.reed %@", self.reed);
     
     if (self.property) {
-        [self.Date setText:[self.property valueForKey:@"date"]];
-        [self.Judgement setText:[self.property valueForKey:@"judgement"]];
+        self.Date.text = self.property.date;
+        self.Judgement.text = self.property.judgement;
     }
 }
 
@@ -60,24 +60,25 @@
     
     if (self.property) {
         // Update existing device
-        [self.property setValue:self.Date.text forKey:@"date"];
-        [self.property setValue:self.Judgement.text forKey:@"judgement"];
+        self.property.date = self.Date.text;
+        self.property.judgement = self.Judgement.text;
         
     } else {
         // Create Property
         NSEntityDescription *entityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:self.managedObjectContext];
-        NSManagedObject *newProp = [[NSManagedObject alloc] initWithEntity:entityProp insertIntoManagedObjectContext:self.managedObjectContext];
+        ReedPropertyBundle *newProp = [[ReedPropertyBundle alloc] initWithEntity:entityProp insertIntoManagedObjectContext:self.managedObjectContext];
         
         // Set Properties
-        [newProp setValue:self.Date.text forKey:@"date"];
-        [newProp setValue:self.Judgement.text forKey:@"judgement"];
+        newProp.date = self.Date.text;
+        newProp.judgement = self.Judgement.text;
         
         // Add Address to Person
 
         //[self.reed setValue:[NSSet setWithObject:newProp] forKey:@"ReedProps"];
+        [reed addReedPropsObject:newProp];
         
-        NSMutableSet *reedPropses = [self.reed mutableSetValueForKey:@"ReedProps"];
-        [reedPropses addObject:newProp];
+        //NSMutableSet *reedPropses = [self.reed mutableSetValueForKey:@"ReedProps"];
+        //[reedPropses addObject:newProp];
 
     }
     

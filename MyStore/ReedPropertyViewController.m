@@ -24,6 +24,7 @@
 
 
 
+
 - (NSManagedObjectContext *)managedObjectContext
 {
     NSManagedObjectContext *context = nil;
@@ -137,7 +138,7 @@
 {
     if ([[segue identifier] isEqualToString:@"UpdateProperty"]) {
         NSLog(@"selectedProperty");
-        NSManagedObject *selectedProperty = [self.matchingBundles objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        ReedPropertyBundle *selectedProperty = [self.matchingBundles objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
 
         NSLog(@"property %@", selectedProperty);
         PropertyDetailViewController *destViewController = segue.destinationViewController;
@@ -145,6 +146,7 @@
         //NSLog(@"self.reed %@", self.reed);
         //destViewController.reed = self.reed;
         //NSLog(@"sending reed %@", destViewController.reed);
+        
         
     }
     

@@ -130,7 +130,7 @@
 {
     if ([[segue identifier] isEqualToString:@"UpdateReed"]) {
      
-        NSManagedObject *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        Reed *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         NSLog(@"selectedReed");
         NSLog(@"reed %@", selectedReed);
         ReedDetailViewController *destViewController = segue.destinationViewController;

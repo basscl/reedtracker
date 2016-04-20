@@ -37,11 +37,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog (@"source class %@", self.sourceView.class);
+    NSLog (@"is ReedViewController %d", [[self.sourceView.class description]  isEqual: @"ReedViewController"]);
+ 
+    if ([[self.sourceView.class description]  isEqual: @"ReedViewController"]){
     // Do any additional setup after loading the view.
-    if (self.reed) {
-        self.reedBrandTextField.text = self.reed.reedBrand;
-        self.reedSizeTextField.text = self.reed.reedSize;
-        self.reedPropertyTextField.text = self.reed.reedProperty;
+        if (self.reed) {
+            self.reedBrandTextField.text = self.reed.reedBrand;
+            self.reedSizeTextField.text = self.reed.reedSize;
+            self.reedPropertyTextField.text = self.reed.reedProperty;
+        }
+    }
+    
+    else if ([[self.sourceView.class description]  isEqual: @"BoxViewController"]){
+        // Do any additional setup after loading the view.
+        if (self.box) {
+            self.reedBrandTextField.text = self.box.brand;
+            self.reedSizeTextField.text = self.box.size;
+            //self.reedPropertyTextField.text = self.reed.reedProperty;
+        }
     }
     
 }

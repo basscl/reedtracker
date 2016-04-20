@@ -7,6 +7,7 @@
 //
 
 #import "BoxViewController.h"
+#import "ReedDetailViewController.h"
 #import "Reed.h"
 #import "Box.h"
 
@@ -130,6 +131,22 @@
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"UpdateBox"]) {
+        
+        Box *selectedBox = [self.boxes objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        NSLog(@"selectedBox");
+        NSLog(@"reed %@", selectedBox);
+        ReedDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.box = selectedBox;
+        destViewController.sourceView = segue.sourceViewController;
+    }
+}
+
+
 /*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

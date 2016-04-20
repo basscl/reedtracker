@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "Reed.h"
+#import "Box.h"
 
 @interface ReedDetailViewController : UIViewController
 
 @property (strong) Reed *reed;
+@property (strong) Box *box;
 @property (weak, nonatomic) IBOutlet UITextField *reedBrandTextField;
 @property (weak, nonatomic) IBOutlet UITextField *reedSizeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *reedPropertyTextField;
+
+//collect source so can use for both ReedViewController and BoxViewController
+@property (strong) UITableViewController *sourceView;
 
 
 - (IBAction)save:(id)sender;

@@ -135,6 +135,7 @@
         NSLog(@"reed %@", selectedReed);
         ReedDetailViewController *destViewController = segue.destinationViewController;
         destViewController.reed = selectedReed;
+        destViewController.sourceView = segue.sourceViewController;
     }
 }
 

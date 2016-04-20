@@ -70,19 +70,37 @@
 - (IBAction)save:(id)sender {
     NSManagedObjectContext *context = [self managedObjectContext];
     
-    if (self.reed) {
-        // Update existing device
-        self.reed.reedBrand = self.reedBrandTextField.text;
-        self.reed.reedSize  = self.reedSizeTextField.text;
-        self.reed.reedProperty  = self.reedPropertyTextField.text;
-        
-    } else {
-        // Create a new device
-        Reed *newReed = [NSEntityDescription insertNewObjectForEntityForName:@"Reed" inManagedObjectContext:context];
-        newReed.reedBrand = self.reedBrandTextField.text;
-        newReed.reedSize  = self.reedSizeTextField.text;
-        newReed.reedProperty  = self.reedPropertyTextField.text;
+    if ([[self.sourceView.class description]  isEqual: @"ReedViewController"]){
+        if (self.reed) {
+            // Update existing device
+            self.reed.reedBrand = self.reedBrandTextField.text;
+            self.reed.reedSize  = self.reedSizeTextField.text;
+            self.reed.reedProperty  = self.reedPropertyTextField.text;
+            
+        } else {
+            // Create a new device
+            Reed *newReed = [NSEntityDescription insertNewObjectForEntityForName:@"Reed" inManagedObjectContext:context];
+            newReed.reedBrand = self.reedBrandTextField.text;
+            newReed.reedSize  = self.reedSizeTextField.text;
+            newReed.reedProperty  = self.reedPropertyTextField.text;
+        }
     }
+    else if ([[self.sourceView.class description]  isEqual: @"BoxViewController"]){
+        if (self.box) {
+            // Update existing device
+            //TECHNICALLY THIS SHOULD ALSO UPDATE ALL CHILD REEDS. PERHAPS CHILD REEDS SHOULDN'T HAVE THEIR OWN PROPERTIES?
+            self.box.brand = self.reedBrandTextField.text;
+            self.box.size  = self.reedSizeTextField.text;
+            //self.reed.reedProperty  = self.reedPropertyTextField.text;
+            
+        } else {
+            // Create a new device
+            Box *newBox = [NSEntityDescription insertNewObjectForEntityForName:@"Box" inManagedObjectContext:context];
+            newBox.brand = self.reedBrandTextField.text;
+            newBox.size  = self.reedSizeTextField.text;
+        }
+    }
+
     
     NSError *error = nil;
     // Save the object to persistent store

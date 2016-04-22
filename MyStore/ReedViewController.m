@@ -128,14 +128,19 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"UpdateReed"]) {
-     
-        Reed *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        NSLog(@"selectedReed");
-        NSLog(@"reed %@", selectedReed);
-        ReedDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.reed = selectedReed;
+    ReedDetailViewController *destViewController = segue.destinationViewController;
+
+    if (! [[segue identifier] isEqualToString:@"Back"]) {
         destViewController.sourceView = segue.sourceViewController;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"UpdateReed"]) {
+        
+        Reed *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        destViewController.reed = selectedReed;
+        //NSLog(@"selectedReed");
+        //NSLog(@"reed %@", selectedReed);
+
     }
 }
 

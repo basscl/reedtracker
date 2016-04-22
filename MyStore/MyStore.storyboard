@@ -14,7 +14,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="G71-Am-K2n" detailTextLabel="3hc-Vr-2xg" style="IBUITableViewCellStyleValue1" id="KfK-wz-z2G">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KfK-wz-z2G" id="IhV-iT-fCB">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Reeds" id="lFk-Sw-1Dg">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="dLE-v9-2Sx">
                             <connections>
-                                <segue destination="2Qd-5Q-EDv" kind="modal" id="hxh-3M-B0q"/>
+                                <segue destination="2Qd-5Q-EDv" kind="modal" identifier="Back" id="hxh-3M-B0q"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="PY1-Sn-20i">
@@ -452,7 +452,12 @@
                     <navigationItem key="navigationItem" title="Boxes" id="zI0-am-X6z">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="cs3-Zi-BzD">
                             <connections>
-                                <segue destination="2Qd-5Q-EDv" kind="modal" id="67r-SB-97s"/>
+                                <segue destination="2Qd-5Q-EDv" kind="modal" identifier="Back" id="67r-SB-97s"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zmd-1w-iwp">
+                            <connections>
+                                <segue destination="1wI-rg-vqO" kind="modal" id="rux-2Y-eI8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -548,9 +553,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bOI-5C-sR1"/>
-        <segue reference="67r-SB-97s"/>
-        <segue reference="FHY-Vt-rPj"/>
+        <segue reference="oEu-ty-NPS"/>
         <segue reference="61K-rt-ZoZ"/>
+        <segue reference="hxh-3M-B0q"/>
+        <segue reference="ovC-ro-NE5"/>
+        <segue reference="rux-2Y-eI8"/>
     </inferredMetricsTieBreakers>
 </document>

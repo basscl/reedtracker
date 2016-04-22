@@ -30,9 +30,6 @@
     return context;
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//
-//}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -135,14 +132,19 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    ReedDetailViewController *destViewController = segue.destinationViewController;
+    
+    if (! [[segue identifier] isEqualToString:@"Back"]) {
+    destViewController.sourceView = segue.sourceViewController;
+    }
+    
     if ([[segue identifier] isEqualToString:@"UpdateBox"]) {
         
         Box *selectedBox = [self.boxes objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         NSLog(@"selectedBox");
         NSLog(@"reed %@", selectedBox);
-        ReedDetailViewController *destViewController = segue.destinationViewController;
         destViewController.box = selectedBox;
-        destViewController.sourceView = segue.sourceViewController;
+
     }
 }
 

@@ -38,7 +38,7 @@
 {
     [super viewDidLoad];
     
-    NSLog (@"source class %@", self.sourceView.class);
+    NSLog (@"source class %@", [self presentingViewController].class);
     NSLog (@"is ReedViewController %d", [[self.sourceView.class description]  isEqual: @"ReedViewController"]);
  
     if ([[self.sourceView.class description]  isEqual: @"ReedViewController"]){
@@ -98,6 +98,7 @@
             Box *newBox = [NSEntityDescription insertNewObjectForEntityForName:@"Box" inManagedObjectContext:context];
             newBox.brand = self.reedBrandTextField.text;
             newBox.size  = self.reedSizeTextField.text;
+            [newBox add10Reeds];
         }
     }
 

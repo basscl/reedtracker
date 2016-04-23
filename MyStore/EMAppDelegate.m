@@ -19,8 +19,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //Create Box
-    NSEntityDescription *entityBox = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:self.managedObjectContext];
-    Box *testBox = [[Box alloc] initWithEntity:entityBox insertIntoManagedObjectContext:self.managedObjectContext];
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    NSEntityDescription *entityBox = [NSEntityDescription entityForName:@"Box" inManagedObjectContext:context];
+    Box *testBox = [[Box alloc] initWithEntity:entityBox insertIntoManagedObjectContext:context];
 
     testBox.size = @"5";
     testBox.brand = @"Homemade";
@@ -33,8 +36,8 @@
     
     
     // Create Reed
-    NSEntityDescription *entityReed = [NSEntityDescription entityForName:@"Reed" inManagedObjectContext:self.managedObjectContext];
-    Reed *newReed = [[Reed alloc] initWithEntity:entityReed insertIntoManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entityReed = [NSEntityDescription entityForName:@"Reed" inManagedObjectContext:context];
+    Reed *newReed = [[Reed alloc] initWithEntity:entityReed insertIntoManagedObjectContext:context];
     
     // Set Reed values
     newReed.reedBrand = @"Vandoren";
@@ -44,8 +47,8 @@
 
     
     // Create Property
-    NSEntityDescription *entityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:self.managedObjectContext];
-    NSManagedObject *newProp = [[NSManagedObject alloc] initWithEntity:entityProp insertIntoManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:context];
+    NSManagedObject *newProp = [[NSManagedObject alloc] initWithEntity:entityProp insertIntoManagedObjectContext:context];
     
     // Set Properties
     [newProp setValue:@"today" forKey:@"date"];
@@ -55,8 +58,8 @@
     [newReed setValue:[NSSet setWithObject:newProp] forKey:@"ReedProps"];
     
     // Create Property
-    NSEntityDescription *anotherEntityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:self.managedObjectContext];
-    NSManagedObject *anotherNewProp = [[NSManagedObject alloc] initWithEntity:anotherEntityProp insertIntoManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *anotherEntityProp = [NSEntityDescription entityForName:@"ReedPropertyBundle" inManagedObjectContext:context];
+    NSManagedObject *anotherNewProp = [[NSManagedObject alloc] initWithEntity:anotherEntityProp insertIntoManagedObjectContext:context];
     
     // Set First and Last Name
     [anotherNewProp setValue:@"tomorrow" forKey:@"date"];

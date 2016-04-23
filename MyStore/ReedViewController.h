@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-
-
 @interface ReedViewController : UITableViewController
+
+@property (strong) NSMutableArray *reeds;
+@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end

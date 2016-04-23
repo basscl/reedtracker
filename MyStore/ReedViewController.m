@@ -11,11 +11,15 @@
 
 @interface ReedViewController ()
 
-@property (strong) NSMutableArray *reeds;
+
 
 @end
 
 @implementation ReedViewController
+
+@synthesize managedObjectContext;
+@synthesize fetchedResultsController = _fetchedResultsController;
+
 
 - (NSManagedObjectContext *)managedObjectContext
 {
@@ -26,6 +30,36 @@
     }
     return context;
 }
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Reed" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
+                              initWithKey:@"reedBrand" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    
+    [fetchRequest setFetchBatchSize:20];
+    
+    NSFetchedResultsController *theFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:managedObjectContext
+                                        sectionNameKeyPath:nil
+                                        cacheName:@"Root"];
+    self.fetchedResultsController = theFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    return _fetchedResultsController;
+    
+}
+
 
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //
@@ -55,10 +89,22 @@
 {
     [super viewDidAppear:animated];
     
+
     // Fetch the devices from persistent data store
-    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+   self.managedObjectContext = [self managedObjectContext];
+    NSLog(@"moc %@", managedObjectContext);
+    
+    /*
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Reed"];
     self.reeds = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+     */
+    
+    NSError *error;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		// Update to handle the error appropriately.
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);  // Fail
+	}
     
     [self.tableView reloadData];
 }
@@ -80,18 +126,38 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.reeds.count;
+    //return self.reeds.count;
+    
+    id  sectionInfo =
+    [[_fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Reed *reed = [_fetchedResultsController objectAtIndexPath:indexPath];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", reed.reedBrand, reed.reedSize]];
+    cell.detailTextLabel.text = reed.reedProperty;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    /*
+     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    NSManagedObject *reed = [self.reeds objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [reed valueForKey:@"reedBrand"], [reed valueForKey:@"reedSize"]]];
-    [cell.detailTextLabel setText:[reed valueForKey:@"reedProperty"]];
+    Reed *reed = [self.reeds objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", reed.reedBrand, reed.reedSize]];
+    cell.detailTextLabel.text = reed.reedProperty;
+     */
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell =
+    [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    // Set up the cell...
+    [self configureCell:cell atIndexPath:indexPath];
     
     
     return cell;
@@ -112,7 +178,9 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
-        [context deleteObject:[self.reeds objectAtIndex:indexPath.row]];
+        //[context deleteObject:[self.reeds objectAtIndex:indexPath.row]];
+        Reed *deleteRow = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.managedObjectContext deleteObject:deleteRow];
         
         NSError *error = nil;
         if (![context save:&error]) {
@@ -121,10 +189,12 @@
         }
         
         // Remove device from table view
-        [self.reeds removeObjectAtIndex:indexPath.row];
-        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //[self.reeds removeObjectAtIndex:indexPath.row];
+        
+        //[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -136,7 +206,8 @@
     
     if ([[segue identifier] isEqualToString:@"UpdateReed"]) {
         
-        Reed *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        //Reed *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        Reed *selectedReed = [_fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
         destViewController.reed = selectedReed;
         //NSLog(@"selectedReed");
         //NSLog(@"reed %@", selectedReed);
@@ -144,6 +215,59 @@
     }
 }
 
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller is about to start sending change notifications, so prepare the table view for updates.
+    [self.tableView beginUpdates];
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray
+                                               arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray
+                                               arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id )sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
+    [self.tableView endUpdates];
+}
 
 /*
 // Override to support editing the table view.

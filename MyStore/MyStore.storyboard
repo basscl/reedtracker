@@ -8,13 +8,13 @@
         <scene sceneID="G8H-uo-DxX">
             <objects>
                 <tableViewController id="dSD-Fl-Hoe" customClass="ReedViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gpp-hb-NkP">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="gpp-hb-NkP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="G71-Am-K2n" detailTextLabel="3hc-Vr-2xg" style="IBUITableViewCellStyleValue1" id="KfK-wz-z2G">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KfK-wz-z2G" id="IhV-iT-fCB">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -41,6 +41,7 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Reeds" id="lFk-Sw-1Dg">
@@ -208,7 +209,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWD-Bn-ZhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824" y="1171"/>
+            <point key="canvasLocation" x="1858" y="1207"/>
         </scene>
         <!--Reed Property View Controller - Properties-->
         <scene sceneID="XyV-Xw-F2l">
@@ -421,7 +422,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="zlw-Xj-F3M" detailTextLabel="1JG-Ih-gDv" style="IBUITableViewCellStyleValue1" id="TpS-9h-Tad">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TpS-9h-Tad" id="r3n-sl-DE9">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -553,10 +554,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oEu-ty-NPS"/>
-        <segue reference="61K-rt-ZoZ"/>
         <segue reference="hxh-3M-B0q"/>
         <segue reference="ovC-ro-NE5"/>
         <segue reference="rux-2Y-eI8"/>
+        <segue reference="oEu-ty-NPS"/>
+        <segue reference="61K-rt-ZoZ"/>
     </inferredMetricsTieBreakers>
 </document>

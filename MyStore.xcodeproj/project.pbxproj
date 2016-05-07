@@ -32,6 +32,7 @@
 		31B093D31C8F433D00FD28F3 /* Reed.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B093D21C8F433D00FD28F3 /* Reed.m */; };
 		31C63E8E1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C63E8C1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld */; };
 		31E733D31CBC1B0C000EDF57 /* ReedPropertyBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E733D21CBC1B0C000EDF57 /* ReedPropertyBundle.m */; };
+		31F5C8911CD6C42C001F51B2 /* ReedStore.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31F5C8901CD6C42C001F51B2 /* ReedStore.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		31C63E8D1C67C5BE00D1CCA7 /* MyStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyStore.xcdatamodel; sourceTree = "<group>"; };
 		31E733D11CBC1B0C000EDF57 /* ReedPropertyBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReedPropertyBundle.h; path = ../ReedPropertyBundle.h; sourceTree = "<group>"; };
 		31E733D21CBC1B0C000EDF57 /* ReedPropertyBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReedPropertyBundle.m; path = ../ReedPropertyBundle.m; sourceTree = "<group>"; };
+		31F5C8901CD6C42C001F51B2 /* ReedStore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ReedStore.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				315093F61B9E3DF100415E29 /* MyStore-Info.plist */,
+				31F5C8901CD6C42C001F51B2 /* ReedStore.plist */,
 				315093F71B9E3DF100415E29 /* InfoPlist.strings */,
 				315093FA1B9E3DF100415E29 /* main.m */,
 				315093FC1B9E3DF100415E29 /* MyStore-Prefix.pch */,
@@ -295,6 +298,7 @@
 			files = (
 				315093F91B9E3DF100415E29 /* InfoPlist.strings in Resources */,
 				315094041B9E3DF100415E29 /* Images.xcassets in Resources */,
+				31F5C8911CD6C42C001F51B2 /* ReedStore.plist in Resources */,
 				315094221B9E3FD700415E29 /* MyStore.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

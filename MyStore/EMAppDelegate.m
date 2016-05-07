@@ -26,11 +26,11 @@
     Box *testBox = [[Box alloc] initWithEntity:entityBox insertIntoManagedObjectContext:context];
 
     testBox.size = @"5";
-    testBox.brand = @"Homemade";
-    testBox.locationStarted = @"Home";
+    testBox.brand = @"Rico";
+    testBox.locationStarted = @"Weehawken";
     [testBox add10Reeds];
-        NSLog(@"BOX!!! %@", testBox);
-    NSLog(@"BOX REEDS!!! %@", testBox.reeds);
+    //NSLog(@"BOX!!! %@", testBox);
+    //NSLog(@"BOX REEDS!!! %@", testBox.reeds);
     
     
     
@@ -42,7 +42,7 @@
     // Set Reed values
     newReed.reedBrand = @"Vandoren";
     newReed.reedSize = @"4.5";
-    newReed.reedProperty = @"hard";
+    newReed.reedProperty = @"blue felt-tip";
     newReed.reedNumber = 1;
 
     
@@ -51,8 +51,8 @@
     NSManagedObject *newProp = [[NSManagedObject alloc] initWithEntity:entityProp insertIntoManagedObjectContext:context];
     
     // Set Properties
-    [newProp setValue:@"today" forKey:@"date"];
-    [newProp setValue:@"wack" forKey:@"judgement"];
+    [newProp setValue:@"04/29/2016" forKey:@"date"];
+    [newProp setValue:@"hard" forKey:@"judgement"];
     
     // Add Property to Person
     [newReed setValue:[NSSet setWithObject:newProp] forKey:@"ReedProps"];
@@ -62,8 +62,8 @@
     NSManagedObject *anotherNewProp = [[NSManagedObject alloc] initWithEntity:anotherEntityProp insertIntoManagedObjectContext:context];
     
     // Set First and Last Name
-    [anotherNewProp setValue:@"tomorrow" forKey:@"date"];
-    [anotherNewProp setValue:@"wackier" forKey:@"judgement"];
+    [anotherNewProp setValue:@"05/01/2016" forKey:@"date"];
+    [anotherNewProp setValue:@"harder" forKey:@"judgement"];
     
     // Create Relationship
     NSMutableSet *reedPropses = [newReed mutableSetValueForKey:@"ReedProps"];

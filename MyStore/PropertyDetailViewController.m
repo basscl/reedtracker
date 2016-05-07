@@ -72,13 +72,9 @@
         newProp.date = self.Date.text;
         newProp.judgement = self.Judgement.text;
         
-        // Add Address to Person
-
-        //[self.reed setValue:[NSSet setWithObject:newProp] forKey:@"ReedProps"];
+        // add property to reed
         [reed addReedPropsObject:newProp];
-        
-        //NSMutableSet *reedPropses = [self.reed mutableSetValueForKey:@"ReedProps"];
-        //[reedPropses addObject:newProp];
+
 
     }
     

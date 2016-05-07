@@ -61,10 +61,6 @@
 }
 
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//
-//}
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -133,6 +129,11 @@
     return [sectionInfo numberOfObjects];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    return [[[_fetchedResultsController sections] objectAtIndex:section] name];
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Reed *reed = [_fetchedResultsController objectAtIndexPath:indexPath];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", reed.reedBrand, reed.reedSize]];
@@ -141,16 +142,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    Reed *reed = [self.reeds objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", reed.reedBrand, reed.reedSize]];
-    cell.detailTextLabel.text = reed.reedProperty;
-     */
-    
+   
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell =

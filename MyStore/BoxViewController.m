@@ -93,9 +93,6 @@
     Box *box = [self.boxes objectAtIndex:indexPath.row];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", box.brand, box.size]];
     [cell.detailTextLabel setText:box.locationStarted];
-    NSLog(@"BOXES LOADED!!! %@", self.boxes);
-    NSLog(@"BOX LOADED!!! %@", box);
-    NSLog(@"SIZE LOADED!!! %@", box.size);
     
     return cell;
 }
@@ -141,83 +138,11 @@
     if ([[segue identifier] isEqualToString:@"UpdateBox"]) {
         
         Box *selectedBox = [self.boxes objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        NSLog(@"selectedBox");
-        NSLog(@"reed %@", selectedBox);
         destViewController.box = selectedBox;
 
     }
 }
 
 
-/*
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"SelectReed"]) {
-        NSLog(@"SelectReed");
-        NSManagedObject *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        NSLog(@"reed %@", selectedReed);
-        
-        ReedPropertyViewController *destViewController = segue.destinationViewController;
-        destViewController.reed = selectedReed;
-        NSLog(@"DVC %@", destViewController );
-        
-    }
-    
-    if ([[segue identifier] isEqualToString:@"SelectReed2"]) {
-        NSLog(@"SelectReed2");
-        Reed *selectedReed = [self.reeds objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        NSLog(@"***reed***2 %@", selectedReed);
-        UINavigationController *navController = segue.destinationViewController;
-        NSLog(@"NAV %@", navController );
-        NSLog(@"TOPVC %@", [navController topViewController] );
-        ReedPropertyViewController *destViewController = navController.topViewController;
-        NSLog(@"DVC %@", destViewController );
-        destViewController.reed = selectedReed;
-        
-    }
-}
-
-*/
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a story board-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- 
- */
 
 @end

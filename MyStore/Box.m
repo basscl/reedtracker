@@ -15,6 +15,7 @@
 @dynamic numReeds;
 @dynamic brand;
 @dynamic dateStarted;
+@dynamic idMark;
 @dynamic size;
 @dynamic locationStarted;
 @dynamic reeds;
@@ -30,6 +31,7 @@
         newReed.reedSize = self.size;
         newReed.reedNumber = i;
         newReed.reedBrand = self.brand;
+        newReed.reedIdMark = self.idMark;
         
         // Add reed to box
         newReed.box = self;
@@ -47,6 +49,7 @@
         newReed.reedSize = self.size;
         newReed.reedNumber = i;
         newReed.reedBrand = self.brand;
+        newReed.reedIdMark = self.idMark;
 
     }
 }

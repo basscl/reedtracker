@@ -13,9 +13,8 @@
 @interface Reed : NSManagedObject
 
 @property (nonatomic, retain) NSString * reedBrand;
-@property (nonatomic, retain) NSString * reedProperty;
-@property (nonatomic, retain) NSString * reedSize;
 @property (nonatomic, retain) NSString * reedIdMark;
+@property (nonatomic, retain) NSString * reedSize;
 @property (nonatomic) int reedNumber;
 @property (nonatomic, retain) NSSet *reedProps;
 @property (nonatomic, retain) NSManagedObject *box;

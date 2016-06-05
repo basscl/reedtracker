@@ -137,7 +137,7 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Reed *reed = [_fetchedResultsController objectAtIndexPath:indexPath];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", reed.reedBrand, reed.reedSize]];
-    cell.detailTextLabel.text = reed.reedProperty;
+    cell.detailTextLabel.text = reed.reedIdMark;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

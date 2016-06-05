@@ -46,7 +46,7 @@
         if (self.reed) {
             self.reedBrandTextField.text = self.reed.reedBrand;
             self.reedSizeTextField.text = self.reed.reedSize;
-            self.reedPropertyTextField.text = self.reed.reedProperty;
+            self.reedPropertyTextField.text = self.reed.reedIdMark;
         }
     }
     
@@ -55,7 +55,7 @@
         if (self.box) {
             self.reedBrandTextField.text = self.box.brand;
             self.reedSizeTextField.text = self.box.size;
-            //self.reedPropertyTextField.text = self.reed.reedProperty;
+            self.reedPropertyTextField.text = self.box.idMark;
         }
     }
     
@@ -75,14 +75,14 @@
             // Update existing device
             self.reed.reedBrand = self.reedBrandTextField.text;
             self.reed.reedSize  = self.reedSizeTextField.text;
-            self.reed.reedProperty  = self.reedPropertyTextField.text;
+            self.reed.reedIdMark  = self.reedPropertyTextField.text;
             
         } else {
             // Create a new device
             Reed *newReed = [NSEntityDescription insertNewObjectForEntityForName:@"Reed" inManagedObjectContext:context];
             newReed.reedBrand = self.reedBrandTextField.text;
             newReed.reedSize  = self.reedSizeTextField.text;
-            newReed.reedProperty  = self.reedPropertyTextField.text;
+            newReed.reedIdMark  = self.reedPropertyTextField.text;
         }
     }
     else if ([[self.sourceView.class description]  isEqual: @"BoxViewController"]){
@@ -91,14 +91,25 @@
             //TECHNICALLY THIS SHOULD ALSO UPDATE ALL CHILD REEDS. PERHAPS CHILD REEDS SHOULDN'T HAVE THEIR OWN PROPERTIES?
             self.box.brand = self.reedBrandTextField.text;
             self.box.size  = self.reedSizeTextField.text;
-            //self.reed.reedProperty  = self.reedPropertyTextField.text;
+            self.box.idMark = self.reedPropertyTextField.text;
+            
+            NSSet *reedSet = self.box.reeds;
+            NSMutableArray *matchingReeds =[[reedSet allObjects] mutableCopy];
+            
+            //update child reeds
+            for (Reed *myReed in matchingReeds) {
+                myReed.reedSize = self.box.size;
+                myReed.reedBrand = self.box.brand;
+                myReed.reedIdMark = self.box.idMark;
+            }
             
         } else {
             // Create a new device
             Box *newBox = [NSEntityDescription insertNewObjectForEntityForName:@"Box" inManagedObjectContext:context];
             newBox.brand = self.reedBrandTextField.text;
             newBox.size  = self.reedSizeTextField.text;
-            [newBox add10Reeds];
+            newBox.idMark = self.reedPropertyTextField.text;
+            [newBox add10Reeds]; // would need to be add5Reeds for bass boxes
         }
     }
 

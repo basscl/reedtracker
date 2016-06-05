@@ -16,6 +16,7 @@
 @property (nonatomic) int numReeds;
 @property (nonatomic, retain) NSString * brand;
 @property (nonatomic, retain) NSDate * dateStarted;
+@property (nonatomic, retain) NSString * idMark;
 @property (nonatomic, retain) NSString * size;
 @property (nonatomic, retain) NSString * locationStarted;
 @property (nonatomic, retain) NSSet *reeds;

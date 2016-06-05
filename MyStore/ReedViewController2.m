@@ -95,7 +95,7 @@
     // Configure the cell...
     Reed *reed = [self.reeds objectAtIndex:indexPath.row];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", reed.reedBrand, reed.reedSize]];
-    [cell.detailTextLabel setText:reed.reedProperty];
+    [cell.detailTextLabel setText:reed.reedIdMark];
     NSLog(@"REEDS LOADED!!! %@", self.reeds);
     NSLog(@"REED LOADED!!! %@", reed);
     NSLog(@"SIZE LOADED!!! %@", reed.reedSize);

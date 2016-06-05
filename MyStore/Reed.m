@@ -12,9 +12,8 @@
 @implementation Reed
 
 @dynamic reedBrand;
-@dynamic reedProperty;
-@dynamic reedSize;
 @dynamic reedIdMark;
+@dynamic reedSize;
 @dynamic reedNumber;
 @dynamic reedProps;
 @dynamic box;

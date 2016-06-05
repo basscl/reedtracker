@@ -71,7 +71,6 @@
     //if (self.reed) {
     //    NSLog(@"self.reed");
     self.bundleSet = self.reed.reedProps;
-    //self.matchingBundles = [[NSMutableArray alloc] initWithObjects:[self.bundleSet allObjects], nil];
     self.matchingBundles =[[self.bundleSet allObjects] mutableCopy];
 
 

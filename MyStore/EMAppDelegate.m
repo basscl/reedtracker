@@ -28,6 +28,7 @@
     testBox.size = @"5";
     testBox.brand = @"Rico";
     testBox.locationStarted = @"Weehawken";
+    testBox.idMark = @"lead pencil";
     [testBox add10Reeds];
     //NSLog(@"BOX!!! %@", testBox);
     //NSLog(@"BOX REEDS!!! %@", testBox.reeds);
@@ -42,7 +43,7 @@
     // Set Reed values
     newReed.reedBrand = @"Vandoren";
     newReed.reedSize = @"4.5";
-    newReed.reedProperty = @"blue felt-tip";
+    newReed.reedIdMark = @"blue felt-tip";
     newReed.reedNumber = 1;
 
     

@@ -43,7 +43,7 @@
     [fetchRequest setEntity:entity];
     
     NSSortDescriptor *sort = [[NSSortDescriptor alloc]
-                              initWithKey:@"reedBrand" ascending:NO];
+                              initWithKey:@"boxSort" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     
     [fetchRequest setFetchBatchSize:20];
@@ -51,7 +51,7 @@
     NSFetchedResultsController *theFetchedResultsController =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                         managedObjectContext:managedObjectContext
-                                        sectionNameKeyPath:@"reedBrand"
+                                        sectionNameKeyPath:@"boxSort"
                                         cacheName:@"Root"];
     self.fetchedResultsController = theFetchedResultsController;
     _fetchedResultsController.delegate = self;
@@ -131,7 +131,13 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    return [[[_fetchedResultsController sections] objectAtIndex:section] name];
+    NSString *sort = [[[_fetchedResultsController sections] objectAtIndex:section] name];
+    NSInteger dateLength = 12;
+    NSString *brand = [sort substringWithRange:NSMakeRange(dateLength, sort.length-dateLength)];
+    NSString *dateString = [sort substringWithRange:NSMakeRange(0, dateLength)];
+
+    return [brand stringByAppendingFormat:@" %@", dateString];
+
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {

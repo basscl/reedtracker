@@ -21,6 +21,11 @@
 @dynamic reeds;
 
 - (void)add10Reeds{
+    //set the sort key for this box
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; //date should prob be assigned in a custom constructor
+    [dateFormatter setDateFormat:@"yyyyMMddHHmm"];
+    NSString *dateString = [dateFormatter stringFromDate:self.dateStarted];
+    NSString *sortKey = [dateString stringByAppendingString:self.brand];
     //for 1 to 10 make a new reed that has this box
     for (int i = 1; i <= 10; i++) {
         //make a reed
@@ -32,6 +37,8 @@
         newReed.reedNumber = i;
         newReed.reedBrand = self.brand;
         newReed.reedIdMark = self.idMark;
+        newReed.boxSort = sortKey;
+        
         
         // Add reed to box
         newReed.box = self;
@@ -39,6 +46,11 @@
 }
 
 - (void)add5Reeds{
+    //set the sort key for this box
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; //date should prob be assigned in a custom constructor
+    [dateFormatter setDateFormat:@"yyyyMMddHHmm"];
+    NSString *dateString = [dateFormatter stringFromDate:self.dateStarted];
+    NSString *sortKey = [dateString stringByAppendingString:self.brand];
     //for 1 to 10 make a new reed that has this box
     for (int i = 1; i <= 5; i++) {
         //make a reed
@@ -50,6 +62,7 @@
         newReed.reedNumber = i;
         newReed.reedBrand = self.brand;
         newReed.reedIdMark = self.idMark;
+        newReed.boxSort = sortKey;
 
     }
 }

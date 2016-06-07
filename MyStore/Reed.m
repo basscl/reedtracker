@@ -11,6 +11,7 @@
 
 @implementation Reed
 
+@dynamic boxSort;
 @dynamic reedBrand;
 @dynamic reedIdMark;
 @dynamic reedSize;

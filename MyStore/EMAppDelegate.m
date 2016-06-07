@@ -29,6 +29,7 @@
     testBox.brand = @"Rico";
     testBox.locationStarted = @"Weehawken";
     testBox.idMark = @"lead pencil";
+    testBox.dateStarted = [NSDate date];
     [testBox add10Reeds];
     //NSLog(@"BOX!!! %@", testBox);
     //NSLog(@"BOX REEDS!!! %@", testBox.reeds);
@@ -45,6 +46,7 @@
     newReed.reedSize = @"4.5";
     newReed.reedIdMark = @"blue felt-tip";
     newReed.reedNumber = 1;
+    newReed.boxSort = @"201601011200Vandoren";
 
     
     // Create Property

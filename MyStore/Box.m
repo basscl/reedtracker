@@ -26,6 +26,8 @@
     [dateFormatter setDateFormat:@"yyyyMMddHHmm"];
     NSString *dateString = [dateFormatter stringFromDate:self.dateStarted];
     NSString *sortKey = [dateString stringByAppendingString:self.brand];
+    sortKey = [sortKey stringByAppendingString:@" "];
+    sortKey = [sortKey stringByAppendingString:self.size];
     //for 1 to 10 make a new reed that has this box
     for (int i = 1; i <= 10; i++) {
         //make a reed
@@ -51,6 +53,8 @@
     [dateFormatter setDateFormat:@"yyyyMMddHHmm"];
     NSString *dateString = [dateFormatter stringFromDate:self.dateStarted];
     NSString *sortKey = [dateString stringByAppendingString:self.brand];
+    sortKey = [sortKey stringByAppendingString:@" "];
+    sortKey = [sortKey stringByAppendingString:self.size];
     //for 1 to 10 make a new reed that has this box
     for (int i = 1; i <= 5; i++) {
         //make a reed

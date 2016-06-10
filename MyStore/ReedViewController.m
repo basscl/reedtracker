@@ -44,7 +44,9 @@
     
     NSSortDescriptor *sort = [[NSSortDescriptor alloc]
                               initWithKey:@"boxSort" ascending:NO];
-    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    NSSortDescriptor *sort2 = [[NSSortDescriptor alloc]
+                              initWithKey:@"reedNumber" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sort, sort2, nil]];
     
     [fetchRequest setFetchBatchSize:20];
     
@@ -131,10 +133,10 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    NSString *sort = [[[_fetchedResultsController sections] objectAtIndex:section] name];
+    NSString *sectionName = [[[_fetchedResultsController sections] objectAtIndex:section] name];
     NSInteger dateLength = 12;
-    NSString *brand = [sort substringWithRange:NSMakeRange(dateLength, sort.length-dateLength)];
-    NSString *dateString = [sort substringWithRange:NSMakeRange(0, dateLength)];
+    NSString *brand = [sectionName substringWithRange:NSMakeRange(dateLength, sectionName.length-dateLength)];
+    NSString *dateString = [sectionName substringWithRange:NSMakeRange(0, dateLength)];
 
     return [brand stringByAppendingFormat:@" %@", dateString];
 
@@ -142,7 +144,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Reed *reed = [_fetchedResultsController objectAtIndexPath:indexPath];
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", reed.reedBrand, reed.reedSize]];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%i %@ %@", reed.reedNumber, reed.reedBrand, reed.reedSize]];
     cell.detailTextLabel.text = reed.reedIdMark;
 }
 

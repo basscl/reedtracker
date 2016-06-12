@@ -31,6 +31,7 @@
     testBox.idMark = @"lead pencil";
     testBox.dateStarted = [NSDate date];
     [testBox add10Reeds];
+
     //NSLog(@"BOX!!! %@", testBox);
     //NSLog(@"BOX REEDS!!! %@", testBox.reeds);
     

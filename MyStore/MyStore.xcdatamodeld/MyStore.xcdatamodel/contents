@@ -11,10 +11,12 @@
     </entity>
     <entity name="Reed" representedClassName="Reed" syncable="YES">
         <attribute name="boxSort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="reedBrand" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reedIdMark" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reedNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="reedSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sortDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="box" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Box" inverseName="reeds" inverseEntity="Box" syncable="YES"/>
         <relationship name="reedProps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReedPropertyBundle" inverseName="reed" inverseEntity="ReedPropertyBundle" syncable="YES"/>
     </entity>

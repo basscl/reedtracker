@@ -13,6 +13,9 @@
 @interface Reed : NSManagedObject
 
 @property (nonatomic, retain) NSString * boxSort;
+@property (nonatomic, retain) NSDate * dateCreated;
+@property (nonatomic, retain) NSDate * sortDate;
+
 @property (nonatomic, retain) NSString * reedBrand;
 @property (nonatomic, retain) NSString * reedIdMark;
 @property (nonatomic, retain) NSString * reedSize;

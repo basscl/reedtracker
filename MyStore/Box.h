@@ -29,7 +29,7 @@
 - (void)addReeds:(NSSet *)values;
 - (void)removeReeds:(NSSet *)values;
 
-
+- (void)addNReeds:(int) n;
 - (void)add10Reeds;
 - (void)add5Reeds;
 

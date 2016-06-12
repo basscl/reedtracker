@@ -12,6 +12,8 @@
 @implementation Reed
 
 @dynamic boxSort;
+@dynamic dateCreated;
+@dynamic sortDate;
 @dynamic reedBrand;
 @dynamic reedIdMark;
 @dynamic reedSize;

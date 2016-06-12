@@ -143,7 +143,12 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Reed *reed = [_fetchedResultsController objectAtIndexPath:indexPath];
     [cell.textLabel setText:[NSString stringWithFormat:@"%i %@ %@", reed.reedNumber, reed.reedBrand, reed.reedSize]];
-    cell.detailTextLabel.text = reed.reedIdMark;
+    int count = reed.reedProps.count;
+    if (count > 0) {
+        NSArray *reedProperties = reed.reedProps.allObjects;
+        NSLog(@"reedprop %i",reed.reedProps.count);
+    }
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

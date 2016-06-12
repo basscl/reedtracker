@@ -61,6 +61,16 @@
     // Fetch the devices from persistent data store
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Reed"];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
+                              initWithKey:@"reedBrand" ascending:YES];
+    NSSortDescriptor *sort2 = [[NSSortDescriptor alloc]
+                               initWithKey:@"reedNumber" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sort, sort2, nil]];
+    
+    NSString *noBoxId = NULL;
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"box == %@", noBoxId]];
+    
     self.reeds = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     [self.tableView reloadData];
@@ -95,10 +105,39 @@
     // Configure the cell...
     Reed *reed = [self.reeds objectAtIndex:indexPath.row];
     [cell.textLabel setText:[NSString stringWithFormat:@"%i %@ %@", reed.reedNumber, reed.reedBrand, reed.reedSize]];
-    [cell.detailTextLabel setText:reed.reedIdMark];
+    
+    //display reed judgements
+    int count = reed.reedProps.count;
+    NSString *reedJudgementString = @" ";
+    if (count > 0) {
+      
+        NSArray *reedProperties = reed.reedProps.allObjects;
+        
+        //sort reedProprties by date
+        NSArray *sortedProperties = [reedProperties sortedArrayUsingComparator:^NSComparisonResult(ReedPropertyBundle *p1, ReedPropertyBundle *p2){
+            
+            return [p1.date compare:p2.date];
+            
+        }];
+        
+        NSLog(@"reedProperties created");
+
+        for (int i = 0; i < count; i++) {
+            //make a reed
+            NSLog(@"for loop");
+            
+            ReedPropertyBundle *bundle = sortedProperties[i];
+            reedJudgementString = [reedJudgementString stringByAppendingString:@" "];
+            reedJudgementString = [reedJudgementString stringByAppendingString:bundle.judgement];
+            NSLog(@"%@", reedJudgementString);
+        }
+        
+    }
+    
+    [cell.detailTextLabel setText:reedJudgementString];
     //NSLog(@"REEDS LOADED!!! %@", self.reeds);
     //NSLog(@"REED LOADED!!! %@", reed);
-    NSLog(@"SIZE LOADED!!! %d", reed.box.objectID != NULL );
+    //NSLog(@"SIZE LOADED!!! %d", reed.box.objectID != NULL );
     
     return cell;
 }

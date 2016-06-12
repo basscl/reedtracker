@@ -54,6 +54,10 @@
     NSManagedObject *newProp = [[NSManagedObject alloc] initWithEntity:entityProp insertIntoManagedObjectContext:context];
     
     // Set Properties
+    NSDateComponents *testDate = [[NSDateComponents alloc] init];
+    [testDate setYear:2016];
+    [testDate setMonth:4];
+    [testDate setDay:29];
     [newProp setValue:@"04/29/2016" forKey:@"date"];
     [newProp setValue:@"hard" forKey:@"judgement"];
     

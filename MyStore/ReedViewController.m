@@ -48,6 +48,9 @@
                               initWithKey:@"reedNumber" ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sort, sort2, nil]];
     
+    NSString *noBoxId = NULL;
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"box != %@", noBoxId]];
+    
     [fetchRequest setFetchBatchSize:20];
     
     NSFetchedResultsController *theFetchedResultsController =
@@ -89,13 +92,8 @@
     
 
     // Fetch the devices from persistent data store
-   self.managedObjectContext = [self managedObjectContext];
+    self.managedObjectContext = [self managedObjectContext];
     NSLog(@"moc %@", managedObjectContext);
-    
-    /*
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Reed"];
-    self.reeds = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
-     */
     
     NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {

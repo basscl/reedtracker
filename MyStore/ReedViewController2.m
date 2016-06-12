@@ -96,9 +96,9 @@
     Reed *reed = [self.reeds objectAtIndex:indexPath.row];
     [cell.textLabel setText:[NSString stringWithFormat:@"%i %@ %@", reed.reedNumber, reed.reedBrand, reed.reedSize]];
     [cell.detailTextLabel setText:reed.reedIdMark];
-    NSLog(@"REEDS LOADED!!! %@", self.reeds);
-    NSLog(@"REED LOADED!!! %@", reed);
-    NSLog(@"SIZE LOADED!!! %@", reed.reedSize);
+    //NSLog(@"REEDS LOADED!!! %@", self.reeds);
+    //NSLog(@"REED LOADED!!! %@", reed);
+    NSLog(@"SIZE LOADED!!! %d", reed.box.objectID != NULL );
     
     return cell;
 }

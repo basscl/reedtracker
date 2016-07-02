@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		310200541CC1804C0041BF83 /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 310200531CC1804C0041BF83 /* Box.m */; };
+		312880B91D28629200413058 /* ReedPropertyBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 312880B81D28629200413058 /* ReedPropertyBundle.m */; };
 		315093ED1B9E3DF100415E29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315093EC1B9E3DF100415E29 /* Foundation.framework */; };
 		315093EF1B9E3DF100415E29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315093EE1B9E3DF100415E29 /* CoreGraphics.framework */; };
 		315093F11B9E3DF100415E29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315093F01B9E3DF100415E29 /* UIKit.framework */; };
@@ -31,7 +32,6 @@
 		31B093D01C8F3C3D00FD28F3 /* BoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B093CF1C8F3C3D00FD28F3 /* BoxViewController.m */; };
 		31B093D31C8F433D00FD28F3 /* Reed.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B093D21C8F433D00FD28F3 /* Reed.m */; };
 		31C63E8E1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C63E8C1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld */; };
-		31E733D31CBC1B0C000EDF57 /* ReedPropertyBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E733D21CBC1B0C000EDF57 /* ReedPropertyBundle.m */; };
 		31F5C8911CD6C42C001F51B2 /* ReedStore.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31F5C8901CD6C42C001F51B2 /* ReedStore.plist */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +48,8 @@
 /* Begin PBXFileReference section */
 		310200521CC1804C0041BF83 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
 		310200531CC1804C0041BF83 /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
+		312880B71D28629200413058 /* ReedPropertyBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReedPropertyBundle.h; sourceTree = "<group>"; };
+		312880B81D28629200413058 /* ReedPropertyBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReedPropertyBundle.m; sourceTree = "<group>"; };
 		315093E91B9E3DF100415E29 /* MyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		315093EC1B9E3DF100415E29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		315093EE1B9E3DF100415E29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,8 +83,6 @@
 		31B093D11C8F433D00FD28F3 /* Reed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reed.h; sourceTree = "<group>"; };
 		31B093D21C8F433D00FD28F3 /* Reed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reed.m; sourceTree = "<group>"; };
 		31C63E8D1C67C5BE00D1CCA7 /* MyStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyStore.xcdatamodel; sourceTree = "<group>"; };
-		31E733D11CBC1B0C000EDF57 /* ReedPropertyBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReedPropertyBundle.h; path = ../ReedPropertyBundle.h; sourceTree = "<group>"; };
-		31E733D21CBC1B0C000EDF57 /* ReedPropertyBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReedPropertyBundle.m; path = ../ReedPropertyBundle.m; sourceTree = "<group>"; };
 		31F5C8901CD6C42C001F51B2 /* ReedStore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ReedStore.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,10 +115,10 @@
 		310200511CC17BC20041BF83 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				312880B71D28629200413058 /* ReedPropertyBundle.h */,
+				312880B81D28629200413058 /* ReedPropertyBundle.m */,
 				310200521CC1804C0041BF83 /* Box.h */,
 				310200531CC1804C0041BF83 /* Box.m */,
-				31E733D11CBC1B0C000EDF57 /* ReedPropertyBundle.h */,
-				31E733D21CBC1B0C000EDF57 /* ReedPropertyBundle.m */,
 				31B093D11C8F433D00FD28F3 /* Reed.h */,
 				31B093D21C8F433D00FD28F3 /* Reed.m */,
 			);
@@ -321,10 +321,10 @@
 				316CA4621C72ED37000D34C6 /* PropertyDetailViewController.m in Sources */,
 				3173ED591C631328001EDD7E /* ReedPropertyViewController.m in Sources */,
 				315094251B9E44D800415E29 /* ReedViewController.m in Sources */,
-				31E733D31CBC1B0C000EDF57 /* ReedPropertyBundle.m in Sources */,
 				31C63E8E1C67C5BE00D1CCA7 /* MyStore.xcdatamodeld in Sources */,
 				3173ED531C6307A2001EDD7E /* ReedViewController2.m in Sources */,
 				31B093D31C8F433D00FD28F3 /* Reed.m in Sources */,
+				312880B91D28629200413058 /* ReedPropertyBundle.m in Sources */,
 				31B093D01C8F3C3D00FD28F3 /* BoxViewController.m in Sources */,
 				315093FF1B9E3DF100415E29 /* EMAppDelegate.m in Sources */,
 				310200541CC1804C0041BF83 /* Box.m in Sources */,
